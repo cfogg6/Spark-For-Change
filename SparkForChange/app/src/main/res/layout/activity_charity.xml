@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et_blurb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="Info about the charity" />
+
+    <EditText
+        android:id="@+id/et_website"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Link to website:" />
+
+    <EditText
+        android:id="@+id/et_raised"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Funds raised this year:" />
+
+    <Button
+        android:id="@+id/btn_donate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Donate" />
+
+    <Button
+        android:id="@+id/btn_volunteer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volunteer" />
+
+    <EditText
+        android:id="@+id/et_company_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Sponsored Companies:" />
+</LinearLayout>
