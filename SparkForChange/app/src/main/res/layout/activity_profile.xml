@@ -4,15 +4,6 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/et_Points"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Points:" />
-
     <Button
         android:id="@+id/btn_volunteer_history"
         android:layout_width="match_parent"
@@ -28,6 +19,24 @@
         android:text="Donation History" />
 
     <EditText
+        android:id="@+id/et_current_points"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Current Points:" />
+
+    <EditText
+        android:id="@+id/et_lifetime_points"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Lifetime Points:" />
+
+    <EditText
         android:id="@+id/et_next_badge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,5 +44,22 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Points to next badge:" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/lv_badges"
+                android:layout_width="match_parent"
+                android:layout_height="286dp" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
