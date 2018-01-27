@@ -16,10 +16,9 @@ public class Facade {
     public static Facade getInstance() {
         return ourInstance;
     }
-    HashMap<String, User> users;
-    HashMap<String, Company> companies;
-    HashMap<String, Charity> charities;
-
+    private HashMap<String, User> users;
+    private HashMap<String, Company> companies;
+    private HashMap<String, Charity> charities;
 
     private Facade() {
         this.users = new HashMap<>();
@@ -31,8 +30,13 @@ public class Facade {
         return (int)(hours*HOUR_TO_SPARK);
     }
 
-    public double SparksToDollars(int sparks) {
+    public double sparksToDollars(int sparks) {
         return sparks * SPARK_TO_DOLLAR;
+    }
+
+    public void addPartnership(Company company, Charity charity) {
+        company.addCharity(charity);
+        charity.addCompany(company);
     }
 
     public void companyToCharity(Company company, Charity charity, int sparkNum) {
@@ -45,8 +49,8 @@ public class Facade {
         Block transaction = new Block(sparkNum, BlockType.CHARITY_TO_USER, charity, user);
         user.addTransaction(transaction);
         charity.addDonation(transaction);
-
     }
+
     public void userToCompany(User user, Company company, int sparkNum){
         Block transaction = new Block(sparkNum, BlockType.USER_TO_COMPANY, user, company);
         company.addDonation(transaction);
@@ -60,6 +64,7 @@ public class Facade {
     public void addUser(String name, User user) {
         users.put(name, user);
     }
+
     public void addCharity(String name, Charity charity) {
         charities.put(name, charity);
     }
@@ -79,9 +84,11 @@ public class Facade {
     public List<Charity> getCharities() {
         return new ArrayList<>(this.charities.values());
     }
+
     public List<Company> getCompanies() {
         return new ArrayList<>(this.companies.values());
     }
+
     public List<User> getUsers() {
         return new ArrayList<>(this.users.values());
     }
