@@ -4,28 +4,31 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <EditText
+    <TextView
         android:id="@+id/et_charity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Charity" />
+        android:text="Charity"
+        android:textSize="24sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/et_sparks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Sparks (amount available to spend)" />
+        android:text="Total available sparks"
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/et_spend_sparks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Amount to spend"
         android:inputType="number" />
 
     <Button

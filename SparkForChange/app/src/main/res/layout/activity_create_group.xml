@@ -10,8 +10,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="Name"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/et_newmember"
@@ -19,8 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Email of new member" />
+        android:hint="Email of new member"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/btn_addmember"
