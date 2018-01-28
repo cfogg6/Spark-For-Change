@@ -9,7 +9,6 @@
         android:id="@+id/tv_blurb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:ems="10"
         android:inputType="textMultiLine"
         android:text="Info about the company"
@@ -19,7 +18,6 @@
         android:id="@+id/tv_website"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:autoLink="web"
         android:ems="10"
         android:inputType="textPersonName"
@@ -30,7 +28,6 @@
         android:id="@+id/tv_charities"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Charities we support:"
@@ -40,17 +37,12 @@
         android:id="@+id/tv_charity_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Charities we support"
         android:textSize="30sp"/>
 
     <TextView
         android:id="@+id/tv_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Amount raised this year:"
@@ -60,7 +52,6 @@
         android:id="@+id/tv_employeesparks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:text="TextView"
         android:textSize="30sp" />
 

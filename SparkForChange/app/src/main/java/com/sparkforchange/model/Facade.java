@@ -57,8 +57,21 @@ public class Facade {
         this.addUserToGroup(this.groups.get("Alpha Sigma Phi"), "cole@gmail.com");
 
         this.addPartnership(this.getCompanies().get(0),this.getCharities().get(0));
+        this.addPartnership(this.getCompanies().get(0),this.getCharities().get(1));
         this.addPartnership(this.getCompanies().get(1),this.getCharities().get(1));
+        this.addPartnership(this.getCompanies().get(2),this.getCharities().get(0));
+        this.addPartnership(this.getCompanies().get(2),this.getCharities().get(1));
         this.addPartnership(this.getCompanies().get(2),this.getCharities().get(2));
+        this.addPartnership(this.getCompanies().get(3),this.getCharities().get(0));
+        this.addPartnership(this.getCompanies().get(4),this.getCharities().get(1));
+        this.addPartnership(this.getCompanies().get(5),this.getCharities().get(2));
+        this.addPartnership(this.getCompanies().get(6),this.getCharities().get(0));
+        this.addPartnership(this.getCompanies().get(6),this.getCharities().get(1));
+        this.addPartnership(this.getCompanies().get(6),this.getCharities().get(2));
+        this.addPartnership(this.getCompanies().get(7),this.getCharities().get(0));
+        this.addPartnership(this.getCompanies().get(7),this.getCharities().get(1));
+        this.addPartnership(this.getCompanies().get(8),this.getCharities().get(1));
+        this.addPartnership(this.getCompanies().get(8),this.getCharities().get(2));
 
         // set current user since we are not implementing login
         this.currentUser = users.get("cole@gmail.com");

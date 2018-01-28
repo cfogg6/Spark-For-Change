@@ -23,17 +23,19 @@ public class CompanyActivity extends ToolbarDrawerActivity {
         websiteTv = findViewById(R.id.tv_website);
         charititesTv = findViewById(R.id.tv_charity_list);
         amountTv = findViewById(R.id.tv_amount);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(c.getName());
+        }
         blurbTv.setText(c.getDescription());
         websiteTv.setText(c.getLink());
-        String charities = "";
-        Log.d("LENGTH", String.valueOf(c.getCharityList().size()));
+        StringBuilder charities = new StringBuilder();
         for (Charity charity : c.getCharityList()) {
-            charities += charity.getName() + ", ";
+            charities.append(charity.getName()).append("\n");
         }
-        if (!charities.isEmpty()) {
-            charities = charities.substring(0, charities.length() - 2);
+        if (charities.length() > 0) {
+            charities = new StringBuilder(charities.substring(0, charities.length() - 1));
         }
-        charititesTv.setText(charities);
+        charititesTv.setText(charities.toString());
         amountTv.setText("Donated " + c.getSparkBalance() + " Sparks.");
         TextView empSparkstv = findViewById(R.id.tv_employeesparks);
         empSparkstv.setText("Employees have gained " + Facade.getInstance().getCompanyByName(companyKey).getEmployeeSparks() + " Sparks");
