@@ -12,7 +12,9 @@ import java.util.Set;
 public class User extends Loginable {
     private int sparkBalance;
     private int sparkLifetimeTotal;
-    private List<Block> transactions;
+    private List<SparkDonation> sparkTransactions;
+    private List<VolunteerHourBlock> hourHistory;
+    private List<UserDonationBlock> donationHistory;
     private Set<Group> groups;
 
     private String paymentName;
@@ -25,7 +27,9 @@ public class User extends Loginable {
         super(email, password, name);
         sparkBalance = 0;
         sparkLifetimeTotal = 0;
-        transactions = new LinkedList<>();
+        sparkTransactions = new LinkedList<>();
+        hourHistory = new LinkedList<>();
+        donationHistory = new LinkedList<>();
         groups = new HashSet<>();
     }
 
@@ -35,6 +39,23 @@ public class User extends Loginable {
 
     public void removeGroup(Group group) {
         groups.remove(group);
+    }
+
+    public List<SparkDonation> getSparkTransactions() {
+        return sparkTransactions;
+    }
+
+    public void addSparkTransaction(SparkDonation transaction) {
+        sparkTransactions.add(transaction);
+        sparkBalance -= transaction.getSparkNum();
+    }
+
+    public List<VolunteerHourBlock> getHourHistory() {
+        return hourHistory;
+    }
+
+    public List<UserDonationBlock> getDonationHistory() {
+        return donationHistory;
     }
 
     public Set<Group> getGroups() {
@@ -56,14 +77,6 @@ public class User extends Loginable {
         }
     }
 
-    public List<Block> getTransactions() {
-        return transactions;
-    }
-
-    public void addTransaction(Block b) {
-        this.transactions.add(b);
-    }
-
     public String getCvv() {
         return cvv;
     }
@@ -81,7 +94,6 @@ public class User extends Loginable {
     }
 
     public String getAddress() {
-
         return address;
     }
 
@@ -90,7 +102,6 @@ public class User extends Loginable {
     }
 
     public String getCreditCard() {
-
         return creditCard;
     }
 
@@ -99,12 +110,10 @@ public class User extends Loginable {
     }
 
     public String getExpDate() {
-
         return expDate;
     }
 
     public void setExpDate(String expDate) {
         this.expDate = expDate;
     }
-
 }

@@ -9,24 +9,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textMultiLine"
-        android:text="Info about the charity" />
+        android:hint="Info about the charity"
+        android:inputType="textMultiLine" />
 
     <EditText
         android:id="@+id/et_website"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Link to website:" />
+        android:hint="Link to website:"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/et_raised"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Funds raised this year:" />
+        android:hint="Funds raised this year:"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/btn_donate"
@@ -45,8 +45,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Sponsored Companies:" />
+        android:hint="Sponsored Companies:"
+        android:inputType="textPersonName" />
 
     <ListView
         android:id="@+id/lv_company"

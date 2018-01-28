@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Choose charity" />
+        android:hint="Choose charity"
+        android:inputType="textPersonName" />
 
     <ListView
         android:id="@+id/lv_choose_charity_charities"

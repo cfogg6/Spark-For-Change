@@ -14,6 +14,7 @@ public class Facade {
     private static final Facade ourInstance = new Facade();
     public static final double SPARK_TO_DOLLAR = .10;
     public static final double HOUR_TO_SPARK = 1;
+    public static final double DOLLAR_TO_SPARK = 1 / SPARK_TO_DOLLAR;
 
     public static Facade getInstance() {
         return ourInstance;
@@ -58,27 +59,20 @@ public class Facade {
         return sparks * SPARK_TO_DOLLAR;
     }
 
+    public int dollarsToSparks(double dollars) {
+        return (int)(dollars * DOLLAR_TO_SPARK);
+    }
+
+    public void makeSparkDonation(User user, Company company, Charity charity, int sparkNum) {
+        SparkDonation donation = new SparkDonation(sparkNum, charity, company, user);
+        user.addSparkTransaction(donation);
+        company.addDonation(donation);
+        charity.addDonation(donation);
+    }
+
     public void addPartnership(Company company, Charity charity) {
         company.addCharity(charity);
         charity.addCompany(company);
-    }
-
-    public void companyToCharity(Company company, Charity charity, int sparkNum) {
-        Block transaction = new Block(sparkNum, BlockType.COMPANY_TO_CHARITY, company, charity);
-        company.addDonation(transaction);
-        charity.addDonation(transaction);
-    }
-
-    public void charityToUser(Charity charity, User user, int sparkNum){
-        Block transaction = new Block(sparkNum, BlockType.CHARITY_TO_USER, charity, user);
-        user.addTransaction(transaction);
-        charity.addDonation(transaction);
-    }
-
-    public void userToCompany(User user, Company company, int sparkNum){
-        Block transaction = new Block(sparkNum, BlockType.USER_TO_COMPANY, user, company);
-        company.addDonation(transaction);
-        user.addTransaction(transaction);
     }
 
     public void createGroup(String name) {
