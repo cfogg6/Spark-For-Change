@@ -30,6 +30,8 @@
         </activity>
         <activity android:name=".controllers.RewardActivity">
         </activity>
+        <activity android:name=".controllers.ChooseCharityActivity">
+        </activity>
     </application>
 
 </manifest>
