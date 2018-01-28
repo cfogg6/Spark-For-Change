@@ -24,6 +24,6 @@ public class CompanyActivity extends ToolbarDrawerActivity {
         }
         charities.substring(0, charities.length() - 2);
         charititesTv.setText(charities);
-        amountTv.setText(Facade.getInstance().getCompanies().get(index).getSparkBalance());
+        amountTv.setText("Donated " + Facade.getInstance().getCompanies().get(index).getSparkBalance() + " Sparks.");
     }
 }
