@@ -26,7 +26,7 @@ public class HomeActivity extends ToolbarDrawerActivity {
         donateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(HomeActivity.this, DonateActivity.class);
+                Intent it = new Intent(HomeActivity.this, ChooseCharityActivity.class);
                 startActivity(it);
             }
         });
