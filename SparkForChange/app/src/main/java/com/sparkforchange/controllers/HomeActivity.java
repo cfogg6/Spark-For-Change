@@ -26,7 +26,7 @@ public class HomeActivity extends ToolbarDrawerActivity {
         searchView = findViewById(R.id.sv_home_search);
 
         donateBtn.setOnClickListener(view -> {
-            Intent it = new Intent(HomeActivity.this, DonateActivity.class);
+            Intent it = new Intent(HomeActivity.this, ChooseCharityActivity.class);
             startActivity(it);
         });
 

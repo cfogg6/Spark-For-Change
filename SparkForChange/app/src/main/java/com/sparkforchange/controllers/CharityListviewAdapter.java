@@ -10,12 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.sparkforchange.R;
 import com.sparkforchange.model.Charity;
+import com.sparkforchange.model.Facade;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,15 +35,14 @@ public class CharityListviewAdapter extends RecyclerView.Adapter<CharityListview
 
     /**
      * Constructor for the adapter that sets the charities list to argument.
-     * @param m List of charities to set the cards to
      */
-    public CharityListviewAdapter(List<Charity> m) {
-        this.charities = m;
+    public CharityListviewAdapter() {
+        this.charities = Facade.getInstance().getCharities();
     }
 
     @Override
     public int getItemCount() {
-        return  charities.size();
+        return charities.size();
     }
 
     /**
@@ -49,35 +50,30 @@ public class CharityListviewAdapter extends RecyclerView.Adapter<CharityListview
      *
      * @param list New list to update the movie list to
      */
-    public void updateMovies(List<Charity> list) {
+    public void updateCharities(List<Charity> list) {
         charities = list;
     }
 
     @Override
     public CharityViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        final View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.charity_row, viewGroup, false);
+        final View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.choose_charity_row, viewGroup, false);
         return new CharityViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(final CharityViewHolder charityViewHolder, int i) {
-        final Charity mov = charities.get(i);
-//
-//        charityViewHolder.movieName.setText(mov.getName());
-//        charityViewHolder.releaseDate.setText(mov.getDate());
-//        charityViewHolder.details.setText(mov.getRatingRuntime());
-//        charityViewHolder.starBar.setRating((float) mov.getRating().getAverageRating());
-//
-//        new DownloadImageTask(charityViewHolder.movPhoto).execute(mov.getPhotoID());
-//
-//        charityViewHolder.cvLayout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                final Intent it = new Intent(v.getContext(), MovieInfoActivity.class);
-//                it.putExtra("SALTY_POPCORN_CURRENT_MOVIE", mov);
-//                v.getContext().startActivity(it);
-//            }
-//        });
+        final Charity charity = charities.get(i);
+
+        charityViewHolder.charityTitle.setText(charity.getName());
+
+        charityViewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent it = new Intent(v.getContext(), CharityActivity.class);
+                it.putExtra("SALTY_POPCORN_CURRENT_MOVIE", i);
+                v.getContext().startActivity(it);
+            }
+        });
     }
 
     /**
@@ -93,6 +89,11 @@ public class CharityListviewAdapter extends RecyclerView.Adapter<CharityListview
          * Movie photo
          */
         private ImageView charityPhoto;
+        /**
+         * Layout to make clickable
+         */
+        private LinearLayout linearLayout;
+
 
         /**
          * View
@@ -100,13 +101,9 @@ public class CharityListviewAdapter extends RecyclerView.Adapter<CharityListview
          */
         CharityViewHolder(View itemView) {
             super(itemView);
-//            cv = (CardView) itemView.findViewById(R.id.movCardView);
             charityTitle = (TextView) itemView.findViewById(R.id.tv_choose_charity_row_charity);
-//            releaseDate = (TextView) itemView.findViewById(R.id.release_date);
-//            details = (TextView) itemView.findViewById(R.id.movie_details);
             charityPhoto = (ImageView) itemView.findViewById(R.id.im_choose_charity_photo);
-//            cvLayout = (RelativeLayout) itemView.findViewById(R.id.cv_layout);
-//            starBar = (RatingBar) itemView.findViewById(R.id.mov_rating);
+            linearLayout = (LinearLayout) itemView.findViewById(R.id.ll_choose_charity);
         }
     }
 }
