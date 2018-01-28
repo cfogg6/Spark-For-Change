@@ -139,7 +139,7 @@ public class ToolbarDrawerActivity extends AppCompatActivity {
                             return true;
 
                         case R.id.group:
-                            it = new Intent(ToolbarDrawerActivity.this, GroupActivity.class);
+                            it = new Intent(ToolbarDrawerActivity.this, ManageGroupsActivity.class);
                             startActivity(it);
                             return true;
 

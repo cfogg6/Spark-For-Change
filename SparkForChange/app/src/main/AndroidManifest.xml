@@ -32,6 +32,7 @@
         <activity android:name=".controllers.CreateGroupActivity" />
         <activity android:name=".controllers.ManageGroupsActivity" />
         <activity android:name=".controllers.CompanyActivity"></activity>
+        <activity android:name=".controllers.GroupRecyclerViewAdapter"></activity>
     </application>
 
 </manifest>

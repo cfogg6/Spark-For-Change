@@ -50,8 +50,8 @@ public class Facade {
         this.groups.put("Alpha Sigma Phi", new Group("Alpha Sigma Phi", users.get("cfogg6@gatech.edu")));
         this.users.put("nancy@gmail.com", new User("nancy@gmail.com", "password", "Nancy Tao"));
         this.users.put("cole@gmail.com", new User("cole@gmail.com", "password", "Cole Bowers"));
-        this.groups.get("Alpha Sigma Phi").addUser(users.get("amgiddings@gmail.com"));
-        this.groups.get("Alpha Sigma Phi").addUser(users.get("cole@gmail.com"));
+        this.addUserToGroup(this.groups.get("Alpha Sigma Phi"), "amgiddings@gmail.com");
+        this.addUserToGroup(this.groups.get("Alpha Sigma Phi"), "cole@gmail.com");
 
         this.addPartnership(this.getCompanies().get(0),this.getCharities().get(0));
         this.addPartnership(this.getCompanies().get(1),this.getCharities().get(0));
@@ -97,9 +97,11 @@ public class Facade {
         currentUser.addGroup(newGroup);
     }
 
-    public boolean addUser(Group group, String usersEmail) {
+    public boolean addUserToGroup(Group group, String usersEmail) {
         if (users.get(usersEmail) != null) {
+            User user = users.get(usersEmail);
             group.addUser(users.get(usersEmail));
+            user.addGroup(group);
             return true;
         }
         return false;

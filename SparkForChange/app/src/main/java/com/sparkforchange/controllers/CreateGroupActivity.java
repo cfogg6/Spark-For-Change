@@ -4,13 +4,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.sparkforchange.R;
 import com.sparkforchange.model.Facade;
+import com.sparkforchange.model.Group;
 
 public class CreateGroupActivity extends ToolbarDrawerActivity {
-    Button addMemberBtn;
-    EditText nameEt, emailEt;
+    Button addCreateGroupBtn;
+    EditText nameEt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,18 +21,18 @@ public class CreateGroupActivity extends ToolbarDrawerActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("New Group");
         }
-        addMemberBtn = findViewById(R.id.btn_addmember);
+        addCreateGroupBtn = findViewById(R.id.btn_createGroup);
         nameEt = findViewById(R.id.et_group_name);
-        emailEt = findViewById(R.id.et_newmember);
 
-        addMemberBtn.setOnClickListener(new View.OnClickListener() {
+        addCreateGroupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (Facade.getInstance().getGroupByName(nameEt.getText().toString()) == null) {
                     Facade.getInstance().createGroup(nameEt.getText().toString());
                 }
-                Facade.getInstance().getGroupByName(nameEt.getText().toString()).addUser(Facade.getInstance().getUserByEmail(emailEt.getText().toString()));
-                emailEt.setText("");
+                Toast.makeText(getApplicationContext(), "Group Created",
+                        Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }
