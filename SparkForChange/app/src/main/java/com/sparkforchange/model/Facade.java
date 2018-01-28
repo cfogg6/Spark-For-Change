@@ -22,14 +22,14 @@ public class Facade {
     private HashMap<String, User> users;
     private HashMap<String, Company> companies;
     private HashMap<String, Charity> charities;
-    private Set<Group> groups;
+    private HashMap<String, Group> groups;
     private User currentUser;
 
     private Facade() {
         this.users = new HashMap<>();
         this.companies = new HashMap<>();
         this.charities = new HashMap<>();
-        this.groups = new HashSet<>();
+        this.groups = new HashMap<>();
 
         // fake data
         this.users.put("amgiddings@gmail.com", new User("amgiddings@gmail.com", "password", "Allie Giddings"));
@@ -46,6 +46,11 @@ public class Facade {
         this.charities.put("child@gmail.com", new Charity("child@gmail.com", "password", "Child's Play"));
         this.charities.put("malaria@gmail.com", new Charity("malaria@gmail.com", "password", "Against Malaria Foundation"));
         this.charities.put("breastcancer@gmail.com", new Charity("breastcancer@gmail.com", "password", "Breast Cancer Research Foundation"));
+        this.groups.put("Alpha Sigma Phi", new Group("Alpha Sigma Phi", users.get("cfogg6@gatech.edu")));
+        this.users.put("nancy@gmail.com", new User("nancy@gmail.com", "password", "Nancy Tao"));
+        this.users.put("cole@gmail.com", new User("cole@gmail.com", "password", "Cole Bowers"));
+        this.groups.get("Alpha Sigma Phi").addUser(users.get("amgiddings@gmail.com"));
+        this.groups.get("Alpha Sigma Phi").addUser(users.get("cole@gmail.com"));
 
         // set current user since we are not implementing login
         this.currentUser = users.get("amgiddings@gmail.com");
@@ -77,7 +82,7 @@ public class Facade {
 
     public void createGroup(String name) {
         Group newGroup = new Group(name, currentUser);
-        groups.add(newGroup);
+        groups.put(name, newGroup);
         currentUser.addGroup(newGroup);
     }
 
@@ -133,6 +138,6 @@ public class Facade {
     }
 
     public List<Group> getGroups() {
-        return new ArrayList<>(this.groups);
+        return new ArrayList<>(this.groups.values());
     }
 }
