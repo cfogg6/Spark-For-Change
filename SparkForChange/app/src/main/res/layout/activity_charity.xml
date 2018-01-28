@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/et_blurb"
+        android:id="@+id/tv_blurb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -14,7 +14,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/et_website"
+        android:id="@+id/tv_website"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -23,7 +23,7 @@
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/et_raised"
+        android:id="@+id/tv_raised"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
