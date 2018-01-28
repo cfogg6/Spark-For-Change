@@ -12,14 +12,18 @@ import java.util.Set;
 public class User extends Loginable {
     private int sparkBalance;
     private int sparkLifetimeTotal;
-    private List<Block> transactions;
+    private List<SparkDonation> sparkTransactions;
+    private List<VolunteerHourBlock> hourHistory;
+    private List<UserDonationBlock> donationHistory;
     private Set<Group> groups;
 
     User(String email, String password, String name) {
         super(email, password, name);
         sparkBalance = 0;
         sparkLifetimeTotal = 0;
-        transactions = new LinkedList<>();
+        sparkTransactions = new LinkedList<>();
+        hourHistory = new LinkedList<>();
+        donationHistory = new LinkedList<>();
         groups = new HashSet<>();
     }
 
@@ -29,6 +33,23 @@ public class User extends Loginable {
 
     public void removeGroup(Group group) {
         groups.remove(group);
+    }
+
+    public List<SparkDonation> getSparkTransactions() {
+        return sparkTransactions;
+    }
+
+    public void addSparkTransaction(SparkDonation transaction) {
+        sparkTransactions.add(transaction);
+        sparkBalance -= transaction.getSparkNum();
+    }
+
+    public List<VolunteerHourBlock> getHourHistory() {
+        return hourHistory;
+    }
+
+    public List<UserDonationBlock> getDonationHistory() {
+        return donationHistory;
     }
 
     public Set<Group> getGroups() {
@@ -48,13 +69,5 @@ public class User extends Loginable {
         if (newSparks > 0) {
             sparkLifetimeTotal += newSparks;
         }
-    }
-
-    public List<Block> getTransactions() {
-        return transactions;
-    }
-
-    public void addTransaction(Block b) {
-        this.transactions.add(b);
     }
 }
