@@ -28,8 +28,9 @@
         <activity android:name=".controllers.TimelineActivity" />
         <activity android:name=".controllers.LogVolunteerActivity" />
         <activity android:name=".controllers.QRActivity" />
-        <activity android:name=".controllers.CharityActivity"></activity>
-        <activity android:name=".controllers.CreateGroupActivity"></activity>
+        <activity android:name=".controllers.CharityActivity" />
+        <activity android:name=".controllers.CreateGroupActivity" />
+        <activity android:name=".controllers.ManageGroupsActivity"></activity>
     </application>
 
 </manifest>
