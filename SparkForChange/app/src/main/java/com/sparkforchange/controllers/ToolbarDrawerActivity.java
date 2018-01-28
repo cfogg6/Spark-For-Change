@@ -161,11 +161,6 @@ public class ToolbarDrawerActivity extends AppCompatActivity {
                             it = new Intent(ToolbarDrawerActivity.this, ManageGroupsActivity.class);
                             startActivity(it);
                             return true;
-
-                        case R.id.rewards:
-                            it = new Intent(ToolbarDrawerActivity.this, RewardActivity.class);
-                            startActivity(it);
-                            return true;
                     }
                     return true;
                 }
