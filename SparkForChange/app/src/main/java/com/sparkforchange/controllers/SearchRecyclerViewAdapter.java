@@ -3,6 +3,7 @@ package com.sparkforchange.controllers;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,7 @@ import com.sparkforchange.model.Facade;
 import com.sparkforchange.model.Loginable;
 
 import java.util.List;
-import java.util.function.Function;
+import java.util.function.Predicate;
 
 /**
  * Adapter for the RecyclerView regarding horizontal cards or movie cards.
@@ -31,8 +32,14 @@ public class SearchRecyclerViewAdapter extends RecyclerView.Adapter<SearchRecycl
     /**
      * Constructor for the adapter that sets the charities list to argument.
      */
-    public SearchRecyclerViewAdapter() {
+    public SearchRecyclerViewAdapter(String search) {
         this.loginables = Facade.getInstance().getLoginables();
+        this.loginables.removeIf(new Predicate<Loginable>() {
+            @Override
+            public boolean test(Loginable loginable) {
+                return !loginable.getName().toLowerCase().contains(search.toLowerCase());
+            }
+        });
     }
 
     @Override
@@ -42,7 +49,7 @@ public class SearchRecyclerViewAdapter extends RecyclerView.Adapter<SearchRecycl
 
     @Override
     public GroupViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        final View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.choose_charity_row, viewGroup, false);
+        final View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.search_row, viewGroup, false);
         return new GroupViewHolder(v);
     }
 
@@ -51,19 +58,21 @@ public class SearchRecyclerViewAdapter extends RecyclerView.Adapter<SearchRecycl
         final Loginable loginable = loginables.get(groupViewHolder.getAdapterPosition());
 
         groupViewHolder.name.setText(loginable.getName());
+        groupViewHolder.key = loginable.getName();
 
         groupViewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("HI", "HIIIII");
                 final Intent it;
                 if (loginable instanceof Charity) {
                     it = new Intent(v.getContext(), CharityActivity.class);
-                    it.putExtra("charityIndex", groupViewHolder.getAdapterPosition());
+                    it.putExtra("charityKey", groupViewHolder.key);
                 } else {
-                    //TODO: Make company activity
-                    it = new Intent(v.getContext(), CharityActivity.class);
-                    it.putExtra("charityIndex", groupViewHolder.getAdapterPosition());
+                    it = new Intent(v.getContext(), CompanyActivity.class);
+                    it.putExtra("companyKey", groupViewHolder.key);
                 }
+                Log.d("AHHH", String.valueOf(loginable instanceof Charity));
                 v.getContext().startActivity(it);
             }
         });
@@ -79,11 +88,12 @@ public class SearchRecyclerViewAdapter extends RecyclerView.Adapter<SearchRecycl
          */
         private TextView name;
 
+        private String key;
+
         /**
          * Layout to make clickable
          */
         private LinearLayout linearLayout;
-
 
         /**
          * View
@@ -91,8 +101,8 @@ public class SearchRecyclerViewAdapter extends RecyclerView.Adapter<SearchRecycl
          */
         GroupViewHolder(View itemView) {
             super(itemView);
-            name = (TextView) itemView.findViewById(R.id.tv_groupname);
-            linearLayout = (LinearLayout) itemView.findViewById(R.id.ll_group_layout);
+            name = (TextView) itemView.findViewById(R.id.tv_search_name);
+            linearLayout = (LinearLayout) itemView.findViewById(R.id.ll_search_layout);
         }
     }
 }

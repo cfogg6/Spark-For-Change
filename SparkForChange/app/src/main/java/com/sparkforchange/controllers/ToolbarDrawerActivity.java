@@ -55,9 +55,28 @@ public class ToolbarDrawerActivity extends AppCompatActivity {
         final SearchManager searchManager =
             (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         final SearchView searchView =
-            (SearchView) menu.findItem(R.id.menu_search).getActionView();
+            (SearchView) mDrawerLayout.findViewById(R.id.search);
+        searchView.setFocusable(false);
+        searchView.setIconified(false);
+        searchView.clearFocus();
+        searchView.setFocusable(true);
         searchView.setSearchableInfo(
             searchManager.getSearchableInfo(getComponentName()));
+        searchView.setOnQueryTextListener(
+            new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextChange(String newText) {
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    Intent it = new Intent(ToolbarDrawerActivity.this, SearchActivity.class);
+                    it.putExtra("query", query);
+                    startActivity(it);
+                    return true;
+                }
+            });
         return true;
     }
 

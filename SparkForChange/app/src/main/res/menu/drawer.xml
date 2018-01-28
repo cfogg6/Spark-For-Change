@@ -1,33 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:compat="http://schemas.android.com/apk/res-auto">
 
-    <group android:checkableBehavior="single">
-        <item android:id="@+id/home"
-              android:checked="false"
-              android:title="Home"/>
+    <item
+        android:id="@+id/search"
+        compat:actionViewClass="android.support.v7.widget.SearchView"
+        compat:showAsAction="collapseActionView|ifRoom"/>
 
-        <item android:id="@+id/profile"
-              android:checked="false"
-              android:title="Profile"/>
+    <group
+        android:checkableBehavior="single"
+        compat:showAsAction="always">
 
-        <item android:id="@+id/donate"
-              android:checked="false"
-              android:title="Donate"/>
+        <item
+            android:id="@+id/home"
+            android:checked="false"
+            android:title="Home"/>
 
-        <item android:id="@+id/serve"
-              android:checked="false"
-              android:title="Serve"/>
+        <item
+            android:id="@+id/profile"
+            android:checked="false"
+            android:title="Profile"/>
 
-        <item android:id="@+id/spendSparks"
-              android:checked="false"
-              android:title="Spend Sparks"/>
+        <item
+            android:id="@+id/donate"
+            android:checked="false"
+            android:title="Donate"/>
 
-        <item android:id="@+id/rewards"
-              android:checked="false"
-              android:title="Rewards"/>
+        <item
+            android:id="@+id/serve"
+            android:checked="false"
+            android:title="Serve"/>
 
-        <item android:id="@+id/group"
-              android:checked="false"
-              android:title="Group"/>
+        <item
+            android:id="@+id/spendSparks"
+            android:checked="false"
+            android:title="Spend Sparks"/>
+
+        <item
+            android:id="@+id/rewards"
+            android:checked="false"
+            android:title="Rewards"/>
+
+        <item
+            android:id="@+id/group"
+            android:checked="false"
+            android:title="Group"/>
     </group>
 </menu>

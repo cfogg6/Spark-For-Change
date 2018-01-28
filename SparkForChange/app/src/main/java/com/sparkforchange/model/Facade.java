@@ -1,5 +1,7 @@
 package com.sparkforchange.model;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -170,6 +172,14 @@ public class Facade {
 
     public void setCurrentUser(User currentUser) {
         this.currentUser = currentUser;
+    }
+
+    public Company getCompanyByEmail(String email) {
+        return companies.get(email);
+    }
+
+    public Charity getCharityByEmail(String email) {
+        return charities.get(email);
     }
 }
 
