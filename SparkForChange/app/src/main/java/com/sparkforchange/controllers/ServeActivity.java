@@ -33,7 +33,8 @@ public class ServeActivity extends ToolbarDrawerActivity {
         loghoursBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(ServeActivity.this, LogVolunteerActivity.class);
+                Intent it = new Intent(ServeActivity.this, ChooseCharityActivity.class);
+                it.putExtra("nextActivity", "LogVolunteerActivity");
                 startActivity(it);
             }
         });

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.sparkforchange.R;
 import com.sparkforchange.model.Charity;
@@ -29,6 +30,7 @@ public class ChooseCharityActivity extends ToolbarDrawerActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Charities");
         }
+        String className = getIntent().getStringExtra("nextActivity");
         rv = (RecyclerView) findViewById(R.id.rv_choose_charity_charities);
         rv.setHasFixedSize(true);
         final LinearLayoutManager llm = new LinearLayoutManager(this);
@@ -37,7 +39,13 @@ public class ChooseCharityActivity extends ToolbarDrawerActivity {
         final CharityRecycleViewAdapter adapter = new CharityRecycleViewAdapter(new Function<Context, Intent>() {
             @Override
             public Intent apply(Context context) {
-                return new Intent(context, CharityActivity.class);
+                try {
+                    Log.d("class", className);
+                    return new Intent(context, Class.forName("com.sparkforchange.controllers." + className));
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                return null;
             }
         });
         rv.setAdapter(adapter);
