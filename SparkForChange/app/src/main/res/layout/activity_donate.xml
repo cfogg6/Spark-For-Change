@@ -23,13 +23,29 @@
         android:id="@+id/btn_update_payment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
         android:layout_weight="1"
+        android:background="@drawable/round_button"
         android:text="Update Payment Information" />
 
     <Button
         android:id="@+id/btn_donate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/round_button"
         android:text="Donate now" />
 
+<<<<<<< HEAD
+=======
+    <Button
+        android:id="@+id/btn_donate_viewhistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/round_button"
+        android:text="View Donation Timeline" />
+
+>>>>>>> f0c1e7489a867a8822318bfeb2377c20c71e76a0
 </LinearLayout>
