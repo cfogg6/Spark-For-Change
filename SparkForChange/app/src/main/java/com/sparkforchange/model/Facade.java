@@ -17,6 +17,7 @@ public class Facade {
     public static final double DOLLAR_TO_SPARK = 1 / SPARK_TO_DOLLAR;
 
     public static Facade getInstance() {
+        System.out.println(ourInstance);
         return ourInstance;
     }
     private HashMap<String, User> users;
@@ -61,6 +62,9 @@ public class Facade {
         this.currentUser.addSparks(288);
         makeSparkDonation(this.currentUser, companies.get("Bloomberg"), charities.get("Child's Play"), 50);
         makeSparkDonation(this.currentUser, companies.get("UPS"), charities.get("Malaria"), 100);
+
+//        this.currentUser.addHours(charities.get("Child's Play"), 4);
+//        this.currentUser.addHours(charities.get("Breast Cancer"), 3.5);
     }
 
     public int hoursToSparks(double hours) {
