@@ -54,6 +54,7 @@ public class Facade {
 
         // set current user since we are not implementing login
         this.currentUser = users.get("amgiddings@gmail.com");
+        this.currentUser.addSparks(178);
     }
 
     public int hoursToSparks(double hours) {
