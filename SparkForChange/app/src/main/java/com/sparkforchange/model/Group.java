@@ -1,7 +1,9 @@
 package com.sparkforchange.model;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Calendar;
 
 /**
  * Created by Nancy on 01/27/2018.
@@ -11,11 +13,13 @@ public class Group {
     private String name;
     private User admin;
     private Set<User> members;
+    private String date;
 
     public Group(String name, User admin) {
         this.name = name;
         this.admin = admin;
         members = new HashSet<>();
+        this.date = Calendar.getInstance().getTime().toString();
     }
 
     public void addUser(User u) {
@@ -42,6 +46,8 @@ public class Group {
     public String getName() {
         return name;
     }
+
+    public String getDate() { return date; }
 
     public void setName(String name) {
         this.name = name;
