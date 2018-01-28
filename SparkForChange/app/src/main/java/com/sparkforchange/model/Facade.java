@@ -34,18 +34,18 @@ public class Facade {
         // fake data
         this.users.put("amgiddings@gmail.com", new User("amgiddings@gmail.com", "password", "Allie Giddings"));
         this.users.put("cfogg6@gatech.edu", new User("cfogg6@gatech.edu", "password", "Corey Fogg"));
-        this.companies.put("ups@gmail.com", new Company("ups@gmail.com", "password", "UPS", "https://sustainability.ups.com/the-ups-foundation/"));
-        this.companies.put("unionpacific@gmail.com", new Company("unionpacific@gmail.com", "password", "Union Pacific", "https://www.up.com/aboutup/community/foundation/"));
-        this.companies.put("sandia@gmail.com", new Company("sandia@gmail.com", "password", "Sandia", "http://www.sandia.gov/about/community/contribution_programs.html"));
-        this.companies.put("capitalone@gmail.com", new Company("capitalone@gmail.com", "password", "Capital One", "https://www.capitalone.com/about/corporate-citizenship/partnerships/"));
-        this.companies.put("bloomberg@gmail.com", new Company("bloomberg@gmail.com", "password", "Bloomberg", "https://www.bloomberg.org/"));
-        this.companies.put("shofur@gmail.com", new Company("shofur@gmail.com", "password", "Shofur", "https://shofur.com/blog/"));
-        this.companies.put("google@gmail.com", new Company("google@gmail.com", "password", "Google", "https://www.google.org/"));
-        this.companies.put("gtri@gmail.com", new Company("gtri@gmail.com", "password", "GTRI", "https://gtri.gatech.edu/"));
-        this.companies.put("verizon@gmail.com", new Company("verizon@gmail.com", "password", "Verizon", "http://www.verizon.com/about/responsibility/giving-and-grants"));
-        this.charities.put("child@gmail.com", new Charity("child@gmail.com", "password", "Child's Play"));
-        this.charities.put("malaria@gmail.com", new Charity("malaria@gmail.com", "password", "Against Malaria Foundation"));
-        this.charities.put("breastcancer@gmail.com", new Charity("breastcancer@gmail.com", "password", "Breast Cancer Research Foundation"));
+        this.companies.put("UPS", new Company("ups@gmail.com", "password", "UPS", "https://sustainability.ups.com/the-ups-foundation/"));
+        this.companies.put("Union Pacific", new Company("unionpacific@gmail.com", "password", "Union Pacific", "https://www.up.com/aboutup/community/foundation/"));
+        this.companies.put("Sandia", new Company("sandia@gmail.com", "password", "Sandia", "http://www.sandia.gov/about/community/contribution_programs.html"));
+        this.companies.put("Capital One", new Company("capitalone@gmail.com", "password", "Capital One", "https://www.capitalone.com/about/corporate-citizenship/partnerships/"));
+        this.companies.put("Bloomberg", new Company("bloomberg@gmail.com", "password", "Bloomberg", "https://www.bloomberg.org/"));
+        this.companies.put("Shofur", new Company("shofur@gmail.com", "password", "Shofur", "https://shofur.com/blog/"));
+        this.companies.put("Google", new Company("google@gmail.com", "password", "Google", "https://www.google.org/"));
+        this.companies.put("GTRI", new Company("gtri@gmail.com", "password", "GTRI", "https://gtri.gatech.edu/"));
+        this.companies.put("Verizon", new Company("verizon@gmail.com", "password", "Verizon", "http://www.verizon.com/about/responsibility/giving-and-grants"));
+        this.charities.put("Child's Play", new Charity("child@gmail.com", "password", "Child's Play"));
+        this.charities.put("Malaria", new Charity("malaria@gmail.com", "password", "Against Malaria Foundation"));
+        this.charities.put("Breast Cancer", new Charity("breastcancer@gmail.com", "password", "Breast Cancer Research Foundation"));
         this.groups.put("Alpha Sigma Phi", new Group("Alpha Sigma Phi", users.get("cfogg6@gatech.edu")));
         this.users.put("nancy@gmail.com", new User("nancy@gmail.com", "password", "Nancy Tao"));
         this.users.put("cole@gmail.com", new User("cole@gmail.com", "password", "Cole Bowers"));
@@ -120,13 +120,15 @@ public class Facade {
         return companies.get(name);
     }
 
-    public User getUserByName(String name) {
-        return users.get(name);
+    public User getUserByEmail(String email) {
+        return users.get(email);
     }
 
     public Charity getCharityByName(String name) {
         return charities.get(name);
     }
+
+    public Group getGroupByName(String name) { return groups.get(name); }
 
     public List<Charity> getCharities() {
         ArrayList<Charity> charityList = new ArrayList<Charity>(this.charities.values());

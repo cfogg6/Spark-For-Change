@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/tv_Name"
+        android:id="@+id/et_group_name"
         android:layout_width="449dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -15,7 +15,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/tv_newmember"
+        android:id="@+id/et_newmember"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"

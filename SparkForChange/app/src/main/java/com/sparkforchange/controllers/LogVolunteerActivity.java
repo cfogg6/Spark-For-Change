@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.sparkforchange.R;
 import com.sparkforchange.model.Facade;
 
-public class LogVolunteerActivity extends ToolbarDrawerActivity {
+public class LogVolunteerActivity extends AppCompatActivity {
 
     Button submitBtn;
     EditText hoursEt;
@@ -32,8 +32,7 @@ public class LogVolunteerActivity extends ToolbarDrawerActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(LogVolunteerActivity.this, HomeActivity.class);
-                Facade.getInstance().getCurrentUser().addHours(Facade.getInstance().getCharityByName(charityTv.getText().toString()),
-                        Integer.parseInt(hoursEt.getText().toString()));
+                Facade.getInstance().getCurrentUser().addHours(Facade.getInstance().getCharityByName(charityTv.getText().toString()), Integer.parseInt(hoursEt.getText().toString()));
                 startActivity(it);
             }
         });
