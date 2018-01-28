@@ -11,5 +11,8 @@ public class ServeActivity extends ToolbarDrawerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_serve);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Serve");
+        }
     }
 }

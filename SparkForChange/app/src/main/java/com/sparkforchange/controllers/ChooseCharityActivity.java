@@ -18,6 +18,9 @@ public class ChooseCharityActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_charity);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Charities");
+        }
         ListView lv = findViewById(R.id.lv_choose_charity_charities);
 
     }

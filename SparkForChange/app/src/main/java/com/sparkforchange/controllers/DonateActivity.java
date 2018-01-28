@@ -18,6 +18,9 @@ public class DonateActivity extends ToolbarDrawerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donate);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Donate");
+        }
         updateBtn = findViewById(R.id.btn_update_payment);
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
