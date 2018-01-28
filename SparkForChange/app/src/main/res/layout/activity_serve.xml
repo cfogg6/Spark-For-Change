@@ -1,33 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="20dp"
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn_qr"
+        android:id="@+id/btn_volunteer_history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:layout_weight="1"
+        android:layout_marginVertical="5dp"
         android:background="@drawable/round_button"
-        android:text="Spark QR" />
+        android:text="View Volunteer Timeline" />
 
     <Button
         android:id="@+id/btn_loghours"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
+        android:layout_marginVertical="5dp"
         android:background="@drawable/round_button"
-        android:text="Log Volunteer Hours" />
+        android:text="Log Volunteer Hours Manually" />
 
-    <Button
-        android:id="@+id/btn_volunteer_history"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:background="@drawable/round_button"
-        android:text="View Volunteer Timeline" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:text="Scan the QR code below with supported charities to automatically verify your service hours"/>
+
+    <ImageView
+        android:id="@+id/imageView_qr"
+        android:layout_width="match_parent"
+        android:layout_height="318dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginVertical="5dp"
+        app:srcCompat="@mipmap/qr" />
 
 </LinearLayout>
