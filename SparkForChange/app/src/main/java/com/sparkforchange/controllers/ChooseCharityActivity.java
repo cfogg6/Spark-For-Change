@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.sparkforchange.R;
 import com.sparkforchange.model.Charity;
@@ -13,7 +14,6 @@ import java.util.List;
 
 public class ChooseCharityActivity extends ToolbarDrawerActivity {
 
-    private final List<Charity> charities = new ArrayList<>();
     /**
      * Recycler View
      */
@@ -26,12 +26,21 @@ public class ChooseCharityActivity extends ToolbarDrawerActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Charities");
         }
-        rv = (RecyclerView) findViewById(R.id.rv_choose_charity_charities);
+        String className = getIntent().getStringExtra("nextActivity");
+        rv = findViewById(R.id.rv_choose_charity_charities);
         rv.setHasFixedSize(true);
         final LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         rv.setLayoutManager(llm);
-        final CharityRecycleViewAdapter adapter = new CharityRecycleViewAdapter(context -> new Intent(context, CharityActivity.class));
+        final CharityRecycleViewAdapter adapter = new CharityRecycleViewAdapter(context -> {
+            try {
+                Log.d("class", className);
+                return new Intent(context, Class.forName("com.sparkforchange.controllers." + className));
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            return null;
+        });
         rv.setAdapter(adapter);
         (rv.getAdapter()).notifyDataSetChanged();
     }
