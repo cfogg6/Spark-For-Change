@@ -30,7 +30,6 @@ public class ChooseCharityActivity extends ToolbarDrawerActivity {
         rv.setLayoutManager(llm);
         final CharityRecycleViewAdapter adapter = new CharityRecycleViewAdapter(context -> {
             try {
-                Log.d("class", className);
                 return new Intent(context, Class.forName("com.sparkforchange.controllers." + className));
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();

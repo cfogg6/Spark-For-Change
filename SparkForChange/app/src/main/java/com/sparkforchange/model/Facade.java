@@ -47,9 +47,9 @@ public class Facade {
         this.companies.put("Google", new Company("google@gmail.com", "password", "Google", "https://www.google.org/", "Google drive, android studio, etc."));
         this.companies.put("GTRI", new Company("gtri@gmail.com", "password", "GTRI", "https://gtri.gatech.edu/", "Georgia tech research institute"));
         this.companies.put("Verizon", new Company("verizon@gmail.com", "password", "Verizon", "http://www.verizon.com/about/responsibility/giving-and-grants", "verizon"));
-        this.charities.put("Child's Play", new Charity("child@gmail.com", "password", "Child's Play"));
-        this.charities.put("Against Malaria", new Charity("malaria@gmail.com", "password", "Against Malaria"));
-        this.charities.put("Susan G. Komen", new Charity("breastcancer@gmail.com", "password", "Susan G. Komen"));
+        this.charities.put("Child's Play", new Charity("child@gmail.com", "password", "Child's Play", "http://childsplaycharity.org/"));
+        this.charities.put("Against Malaria", new Charity("malaria@gmail.com", "password", "Against Malaria", "https://www.againstmalaria.com/"));
+        this.charities.put("Susan G. Komen", new Charity("breastcancer@gmail.com", "password", "Susan G. Komen", "https://ww5.komen.org/"));
         this.groups.put("Alpha Sigma Phi", new Group("Alpha Sigma Phi", users.get("cfogg6@gatech.edu")));
         this.users.put("nancy@gmail.com", new User("nancy@gmail.com", "password", "Nancy Tao"));
         this.users.put("cole@gmail.com", new User("cole@gmail.com", "password", "Cole Bowers"));

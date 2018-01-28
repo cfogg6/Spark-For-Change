@@ -18,7 +18,6 @@ public class CompanyActivity extends ToolbarDrawerActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company);
         String companyKey = getIntent().getStringExtra("companyKey");
-        Log.d("KEYYY", companyKey);
         Company c = Facade.getInstance().getCompanyByName(companyKey);
         blurbTv = findViewById(R.id.tv_blurb);
         websiteTv = findViewById(R.id.tv_website);

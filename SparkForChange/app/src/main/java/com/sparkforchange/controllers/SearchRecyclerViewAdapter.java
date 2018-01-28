@@ -63,7 +63,6 @@ public class SearchRecyclerViewAdapter extends RecyclerView.Adapter<SearchRecycl
         groupViewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("HI", "HIIIII");
                 final Intent it;
                 if (loginable instanceof Charity) {
                     it = new Intent(v.getContext(), CharityActivity.class);
@@ -72,7 +71,6 @@ public class SearchRecyclerViewAdapter extends RecyclerView.Adapter<SearchRecycl
                     it = new Intent(v.getContext(), CompanyActivity.class);
                     it.putExtra("companyKey", groupViewHolder.key);
                 }
-                Log.d("AHHH", String.valueOf(loginable instanceof Charity));
                 v.getContext().startActivity(it);
             }
         });

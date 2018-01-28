@@ -47,8 +47,8 @@
         android:background="@drawable/round_button"
         android:text="Volunteer" />
 
-    <EditText
-        android:id="@+id/et_company_list"
+    <TextView
+        android:id="@+id/tv_company_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"

@@ -31,7 +31,6 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String s) {
                 update(s);
-                Log.d("AHHHHH", s);
                 return true;
             }
 
