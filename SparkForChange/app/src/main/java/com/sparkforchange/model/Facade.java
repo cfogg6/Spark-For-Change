@@ -178,6 +178,8 @@ public class Facade {
         return new ArrayList<>(this.groups.values());
     }
 
+    public HashMap<String, Group> getGroupsAsMap() {return this.groups;}
+
     public User getCurrentUser() {
         return currentUser;
     }

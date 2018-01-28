@@ -33,7 +33,7 @@
             android:hint="Sparks:"
             android:inputType="textPersonName"
             android:text="Sparks:"
-            android:textSize="30sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/tv_date"
@@ -44,12 +44,12 @@
             android:hint="Created on:"
             android:inputType="date"
             android:text="Created on:"
-            android:textSize="30sp" />
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/et_newmembername"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="51dp"
             android:layout_weight="1"
             android:ems="10"
             android:hint="Member's Email"
@@ -63,11 +63,12 @@
             android:layout_weight="1"
             android:background="@drawable/round_button"
             android:text="Add member" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_members"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/lv_members"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.4" />
 </LinearLayout>
