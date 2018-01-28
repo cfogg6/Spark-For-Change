@@ -17,6 +17,7 @@ public class GroupActivity extends ToolbarDrawerActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Groups");
         }
+        groupNameTv = findViewById(R.id.tv_groupname);
         Integer index = 0;
         Facade.getInstance().getGroups().get(index).getName();
         groupNameTv.setText(Facade.getInstance().getGroups().get(index).getName());
