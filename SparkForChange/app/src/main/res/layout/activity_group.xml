@@ -22,23 +22,25 @@
             android:text="Group Name"
             android:textSize="30sp" />
 
-        <EditText
+        <TextView
             android:id="@+id/et_sparks"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:hint="Total number of sparks so far:"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textSize="30sp" />
 
-        <EditText
+        <TextView
             android:id="@+id/et_date"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:ems="10"
             android:hint="Created on:"
-            android:inputType="date" />
+            android:inputType="date"
+            android:textSize="30sp" />
     </LinearLayout>
 
     <ListView
