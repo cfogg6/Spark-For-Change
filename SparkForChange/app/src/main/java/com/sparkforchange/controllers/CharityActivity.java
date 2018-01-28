@@ -20,7 +20,6 @@ public class CharityActivity extends ToolbarDrawerActivity {
         setContentView(R.layout.activity_charity);
         String charityKey = getIntent().getStringExtra("charityKey");
         Charity charity = Facade.getInstance().getCharityByName(charityKey);
-        int charityIndex = Facade.getInstance().getCharities().indexOf(charity);
         blurbTv = findViewById(R.id.tv_blurb);
         websiteTv = findViewById(R.id.tv_website);
         raisedTv = findViewById(R.id.tv_raised);
@@ -33,13 +32,13 @@ public class CharityActivity extends ToolbarDrawerActivity {
 
         donateBtn.setOnClickListener(view -> {
             Intent intent = new Intent(CharityActivity.this, DonateActivity.class);
-            intent.putExtra("charityIndex", charityIndex);
+            intent.putExtra("charityKey", charity.getName());
             startActivity(intent);
         });
 
         volunteerBtn.setOnClickListener(view -> {
             Intent intent = new Intent(CharityActivity.this, LogVolunteerActivity.class);
-            intent.putExtra("charityIndex", charityIndex);
+            intent.putExtra("charityKey", charity.getName());
             startActivity(intent);
         });
     }

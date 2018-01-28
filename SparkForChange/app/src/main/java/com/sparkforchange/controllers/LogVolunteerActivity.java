@@ -24,8 +24,8 @@ public class LogVolunteerActivity extends ToolbarDrawerActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Volunteer Hours");
         }
-        int charityIndex = getIntent().getIntExtra("charityIndex", 0);
-        charity = Facade.getInstance().getCharities().get(charityIndex);
+        String charityName = getIntent().getStringExtra("charityKey");
+        charity = Facade.getInstance().getCharityByName(charityName);
         submitBtn = findViewById(R.id.btn_submit);
         hoursEt = findViewById(R.id.et_num_hours);
         charityTv = findViewById(R.id.tv_loghours_volunteer);

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sparkforchange.R;
+import com.sparkforchange.model.Charity;
 import com.sparkforchange.model.Facade;
 
 import java.text.DecimalFormat;
@@ -26,9 +27,11 @@ public class DonateActivity extends ToolbarDrawerActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Donate");
         }
-        int index = getIntent().getExtras().getInt("charityIndex");
+
+        String charityKey = getIntent().getStringExtra("charityKey");
+        Charity charity = Facade.getInstance().getCharityByName(charityKey);
         charityTv = findViewById(R.id.tv_charity);
-        charityTv.setText(Facade.getInstance().getCharities().get(index).getName());
+        charityTv.setText(charity.getName());
         updateBtn = findViewById(R.id.btn_update_payment);
         donateBtn = findViewById(R.id.btn_donate);
         amountEt = findViewById(R.id.et_donate_dollar_amount);
@@ -44,7 +47,7 @@ public class DonateActivity extends ToolbarDrawerActivity {
             } else {
                 amount = Double.parseDouble(amountEt.getText().toString().substring(1));
             }
-            Facade.getInstance().getCurrentUser().addDonation(Facade.getInstance().getCharities().get(index), amount);
+            Facade.getInstance().getCurrentUser().addDonation(charity, amount);
             Toast.makeText(getApplicationContext(), "Donation sent!", Toast.LENGTH_LONG).show();
             startActivity(intent);
         });

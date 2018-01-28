@@ -63,9 +63,11 @@ public class CharityRecycleViewAdapter extends RecyclerView.Adapter<CharityRecyc
 
         charityViewHolder.charityTitle.setText(charity.getName());
 
+        charityViewHolder.key = charity.getName();
+
         charityViewHolder.linearLayout.setOnClickListener(v -> {
             final Intent it = getInentFunc.apply(v.getContext());
-            it.putExtra("charityIndex", i);
+            it.putExtra("charityKey", charityViewHolder.key);
             v.getContext().startActivity(it);
         });
     }
@@ -88,6 +90,7 @@ public class CharityRecycleViewAdapter extends RecyclerView.Adapter<CharityRecyc
          */
         private LinearLayout linearLayout;
 
+        private String key;
 
         /**
          * View
