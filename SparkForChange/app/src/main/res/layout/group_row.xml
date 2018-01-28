@@ -3,19 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/et_groupname"
+    <TextView
+        android:id="@+id/et_member"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Group name" />
-
-    <Button
-        android:id="@+id/btn_remove"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="Remove" />
+        android:text="Member" />
 </LinearLayout>

@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/et_reward"
+    <TextView
+        android:id="@+id/et_company"
         android:layout_width="wrap_content"
-        android:layout_height="546dp"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Reward" />
+        android:text="Name" />
 </LinearLayout>
