@@ -50,11 +50,13 @@ public class GroupRecyclerViewAdapter extends RecyclerView.Adapter<GroupRecycler
 
         groupViewHolder.groupName.setText(group.getName());
 
+        groupViewHolder.key = group.getName();
+
         groupViewHolder.groupName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final Intent it = new Intent(v.getContext(), GroupActivity.class);
-                it.putExtra("groupIndex", groupViewHolder.getAdapterPosition());
+                it.putExtra("groupKey", groupViewHolder.key);
                 v.getContext().startActivity(it);
             }
         });
@@ -68,10 +70,11 @@ public class GroupRecyclerViewAdapter extends RecyclerView.Adapter<GroupRecycler
     public static class GroupViewHolder extends RecyclerView.ViewHolder {
         private TextView groupName;
 
+        private String key;
+
         GroupViewHolder(View itemView) {
             super(itemView);
             groupName = itemView.findViewById(R.id.et_group_row);
-
         }
     }
 }

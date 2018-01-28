@@ -26,9 +26,9 @@ public class GroupActivity extends ToolbarDrawerActivity {
         }
         groupNameTv = findViewById(R.id.tv_groupname);
         sparksTv = findViewById(R.id.tv_sparks);
-        dateTv =findViewById(R.id.tv_date);
-        Integer index = getIntent().getIntExtra("groupIndex",0 );
-        Group group = Facade.getInstance().getGroups().get(index);
+        dateTv = findViewById(R.id.tv_date);
+        String groupName = getIntent().getStringExtra("groupKey");
+        Group group = Facade.getInstance().getGroupByName(groupName);
         groupNameTv.setText(group.getName());
         sparksTv.setText("Sparks gained: " + group.getGroupsSparks());
         dateTv.setText("Created: "+group.getDate());
@@ -36,7 +36,7 @@ public class GroupActivity extends ToolbarDrawerActivity {
         newmembernameEt = findViewById(R.id.et_newmembername);
         addMemberBtn = findViewById(R.id.btn_addmember);
         addMemberBtn.setOnClickListener(view -> {
-            Facade.getInstance().getGroups().get(index).addUser(Facade.getInstance().getUserByEmail(newmembernameEt.getText().toString()));
+            group.addUser(Facade.getInstance().getUserByEmail(newmembernameEt.getText().toString()));
             Toast.makeText(getApplicationContext(), "Added new member",
                     Toast.LENGTH_SHORT).show();
         });
