@@ -45,6 +45,7 @@ public class GroupActivity extends ToolbarDrawerActivity {
 
         rvMembers.setAdapter(groupsAdapter);
         (rvMembers.getAdapter()).notifyDataSetChanged();
+        groupsAdapter.dataSetChanged();
 
         newmembernameEt = findViewById(R.id.et_newmembername);
         addMemberBtn = findViewById(R.id.btn_addmember);
@@ -54,11 +55,13 @@ public class GroupActivity extends ToolbarDrawerActivity {
             Toast.makeText(getApplicationContext(), "Added new member",
                     Toast.LENGTH_SHORT).show();
             newmembernameEt.setText("");
-            (rvMembers.getAdapter()).notifyDataSetChanged();
+            groupsAdapter.dataSetChanged();
 
         });
 
 
 
     }
+
+
 }

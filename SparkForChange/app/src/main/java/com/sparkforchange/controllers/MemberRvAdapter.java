@@ -1,6 +1,8 @@
 package com.sparkforchange.controllers;
 
 import android.content.Intent;
+import android.os.Looper;
+import android.support.annotation.UiThread;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import com.sparkforchange.model.Facade;
 import com.sparkforchange.model.Group;
 import com.sparkforchange.model.User;
 
+import java.lang.reflect.Member;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,6 +63,10 @@ public class MemberRvAdapter extends RecyclerView.Adapter<MemberRvAdapter.Member
             name = itemView.findViewById(R.id.tv_user_group);
 
         }
+    }
+    @UiThread
+    protected void dataSetChanged() {
+        notifyDataSetChanged();
     }
 }
 
