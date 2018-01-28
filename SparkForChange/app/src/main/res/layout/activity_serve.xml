@@ -27,6 +27,6 @@
         android:id="@+id/btn_volunteer_history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Volunteer History" />
+        android:text="View Volunteer Timeline" />
 
 </LinearLayout>

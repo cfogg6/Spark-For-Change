@@ -5,18 +5,11 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn_volunteer_history"
+        android:id="@+id/btn_timeline"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="Volunteer History" />
-
-    <Button
-        android:id="@+id/btn_donation_history"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Donation History" />
+        android:text="View timeline" />
 
     <EditText
         android:id="@+id/et_current_points"

@@ -11,12 +11,14 @@ import java.util.Set;
 
 public class User extends Loginable {
     private int sparkBalance;
+    private int sparkLifetimeTotal;
     private List<Block> transactions;
     private Set<Group> groups;
 
     User(String email, String password, String name) {
         super(email, password, name);
         sparkBalance = 0;
+        sparkLifetimeTotal = 0;
         transactions = new LinkedList<>();
         groups = new HashSet<>();
     }
@@ -29,12 +31,23 @@ public class User extends Loginable {
         groups.remove(group);
     }
 
+    public Set<Group> getGroups() {
+        return groups;
+    }
+
     public int getSparkBalance() {
         return sparkBalance;
     }
 
-    public void setSparkBalance(int sparkBalance) {
-        this.sparkBalance = sparkBalance;
+    public int getSparkLifetimeTotal() {
+        return sparkLifetimeTotal;
+    }
+
+    public void addSparks(int newSparks) {
+        sparkBalance += newSparks;
+        if (newSparks > 0) {
+            sparkLifetimeTotal += newSparks;
+        }
     }
 
     public List<Block> getTransactions() {
@@ -44,5 +57,4 @@ public class User extends Loginable {
     public void addTransaction(Block b) {
         this.transactions.add(b);
     }
-
 }
