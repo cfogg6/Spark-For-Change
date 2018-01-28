@@ -6,14 +6,18 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.sparkforchange.R;
+import com.sparkforchange.model.Facade;
 
 import java.text.DecimalFormat;
 import java.text.ParseException;
 
 public class DonateActivity extends ToolbarDrawerActivity {
-    Button updateBtn;
+    Button updateBtn, donateBtn;
+    TextView charityTv;
+    EditText amountEt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,10 +25,21 @@ public class DonateActivity extends ToolbarDrawerActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Donate");
         }
+        Integer index = 0;
+        charityTv = findViewById(R.id.tv_charity);
+        charityTv.setText(Facade.getInstance().getCharities().get(index).getName());
         updateBtn = findViewById(R.id.btn_update_payment);
+        donateBtn = findViewById(R.id.btn_donate);
+        amountEt = findViewById(R.id.et_donate_dollar_amount);
         updateBtn.setOnClickListener(view -> {
             Intent intent = new Intent(DonateActivity.this, PaymentMethodActivity.class);
             startActivityForResult(intent, 1);
+        });
+        donateBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(DonateActivity.this, HomeActivity.class);
+            double amount = Double.parseDouble(amountEt.getText().toString().substring(1));
+            Facade.getInstance().getCurrentUser().addDonation(Facade.getInstance().getCharities().get(index),amount);
+            startActivity(intent);
         });
 
         EditText editText = (EditText) findViewById(R.id.et_donate_dollar_amount);

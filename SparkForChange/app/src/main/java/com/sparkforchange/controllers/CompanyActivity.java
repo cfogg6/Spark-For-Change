@@ -15,7 +15,7 @@ public class CompanyActivity extends ToolbarDrawerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company);
-        Integer index = 0;        
+        Integer index = 0;
         blurbTv.setText(Facade.getInstance().getCompanies().get(index).getDescription());
         websiteTv.setText(Facade.getInstance().getCompanies().get(index).getLink());
         String charities = "";
