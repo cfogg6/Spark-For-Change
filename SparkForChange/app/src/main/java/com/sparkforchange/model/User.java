@@ -15,6 +15,12 @@ public class User extends Loginable {
     private List<Block> transactions;
     private Set<Group> groups;
 
+    private String paymentName;
+    private String address;
+    private String creditCard;
+    private String cvv;
+    private String expDate;
+
     User(String email, String password, String name) {
         super(email, password, name);
         sparkBalance = 0;
@@ -57,4 +63,48 @@ public class User extends Loginable {
     public void addTransaction(Block b) {
         this.transactions.add(b);
     }
+
+    public String getCvv() {
+        return cvv;
+    }
+
+    public void setCvv(String cvv) {
+        this.cvv = cvv;
+    }
+
+    public String getPaymentName() {
+        return paymentName;
+    }
+
+    public void setPaymentName(String paymentName) {
+        this.paymentName = paymentName;
+    }
+
+    public String getAddress() {
+
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCreditCard() {
+
+        return creditCard;
+    }
+
+    public void setCreditCard(String creditCard) {
+        this.creditCard = creditCard;
+    }
+
+    public String getExpDate() {
+
+        return expDate;
+    }
+
+    public void setExpDate(String expDate) {
+        this.expDate = expDate;
+    }
+
 }
