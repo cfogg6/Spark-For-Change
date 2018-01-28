@@ -20,7 +20,7 @@ public class CharityActivity extends ToolbarDrawerActivity {
         setContentView(R.layout.activity_charity);
         String charityKey = getIntent().getStringExtra("charityKey");
         Charity charity = Facade.getInstance().getCharityByName(charityKey);
-        int charityIndex = getIntent().getIntExtra("charityIndex", 0);
+        int charityIndex = Facade.getInstance().getCharities().indexOf(charity);
         blurbTv = findViewById(R.id.tv_blurb);
         websiteTv = findViewById(R.id.tv_website);
         raisedTv = findViewById(R.id.tv_raised);
