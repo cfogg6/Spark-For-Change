@@ -2,7 +2,6 @@ package com.sparkforchange.controllers;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
 
@@ -26,36 +25,24 @@ public class HomeActivity extends ToolbarDrawerActivity {
         profileBtn = findViewById(R.id.btn_home_profile);
         searchView = findViewById(R.id.sv_home_search);
 
-        donateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(HomeActivity.this, ChooseCharityActivity.class);
-                startActivity(it);
-            }
+        donateBtn.setOnClickListener(view -> {
+            Intent it = new Intent(HomeActivity.this, ChooseCharityActivity.class);
+            startActivity(it);
         });
 
-        serveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(HomeActivity.this, ServeActivity.class);
-                startActivity(it);
-            }
+        serveBtn.setOnClickListener(view -> {
+            Intent it = new Intent(HomeActivity.this, ServeActivity.class);
+            startActivity(it);
         });
 
-        spendSparksBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(HomeActivity.this, SpendSparksActivity.class);
-                startActivity(it);
-            }
+        spendSparksBtn.setOnClickListener(view -> {
+            Intent it = new Intent(HomeActivity.this, SpendSparksActivity.class);
+            startActivity(it);
         });
 
-        profileBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(HomeActivity.this, ProfileActivity.class);
-                startActivity(it);
-            }
+        profileBtn.setOnClickListener(view -> {
+            Intent it = new Intent(HomeActivity.this, ProfileActivity.class);
+            startActivity(it);
         });
     }
 }

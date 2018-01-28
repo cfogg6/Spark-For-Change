@@ -7,7 +7,7 @@
     android:paddingVertical="10dp">
 
     <TextView
-        android:id="@+id/et_charity"
+        android:id="@+id/tv_loghours-volunteer"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:text="Charity"
@@ -33,6 +33,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="numberDecimal" />
+
     </LinearLayout>
 
     <EditText
