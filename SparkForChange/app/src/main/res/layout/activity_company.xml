@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginHorizontal="20dp"
     android:orientation="vertical">
 
     <TextView
         android:id="@+id/tv_blurb"
-        android:layout_width="410dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:text="Info about the company" />
+        android:text="Info about the company"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/tv_website"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:autoLink="web"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Link to website" />
+        android:text="Link to website"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/tv_charities"
@@ -30,7 +33,8 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Charities we support" />
+        android:text="Charities we support"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/tv_amount"
@@ -39,6 +43,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Amount raised this year:" />
+        android:text="Amount raised this year:"
+        android:textSize="30sp" />
 
 </LinearLayout>
