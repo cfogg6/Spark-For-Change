@@ -58,7 +58,9 @@ public class User extends Loginable {
         }
         Company company = Facade.getInstance().getCompanyByName(employer);
         this.employer = company;
-        this.employer.addEmployee(user);
+        if (user != null) {
+            this.employer.addEmployee(user);
+        }
     }
 
     public Company getEmployer() { return employer; }
