@@ -89,10 +89,6 @@ public class ToolbarDrawerActivity extends AppCompatActivity {
         final NavigationView navView = (NavigationView) fullLayout.findViewById(R.id.navigation_view);
 
         final View header = navView.getHeaderView(0);
-        final TextView usernameDraw = (TextView) header.findViewById(R.id.tV_username_header);
-        final TextView emailDraw = (TextView) header.findViewById(R.id.tV_email_header);
-        usernameDraw.setText("current user");
-        emailDraw.setText("current email");
 
         //Setting Navigation View Item Selected Listener to handle the item click of the navigation menu
         navView.setNavigationItemSelectedListener(
