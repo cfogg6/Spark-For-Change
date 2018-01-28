@@ -33,8 +33,18 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Charities we support"
+        android:text="Charities we support:"
         android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv_charity_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Charities we support"
+        android:textSize="30sp"/>
 
     <TextView
         android:id="@+id/tv_amount"

@@ -21,15 +21,16 @@ public class CompanyActivity extends ToolbarDrawerActivity {
         Company c = Facade.getInstance().getCompanyByName(companyKey);
         blurbTv = findViewById(R.id.tv_blurb);
         websiteTv = findViewById(R.id.tv_website);
-        charititesTv = findViewById(R.id.tv_charities);
+        charititesTv = findViewById(R.id.tv_charity_list);
         amountTv = findViewById(R.id.tv_amount);
         blurbTv.setText(c.getDescription());
         websiteTv.setText(c.getLink());
         String charities = "";
+        Log.d("LENGTH", String.valueOf(c.getCharityList().size()));
         for (Charity charity : c.getCharityList()) {
             charities += charity.getName() + ", ";
         }
-        if (!charities.isEmpty() || charities.length() > 0) {
+        if (!charities.isEmpty()) {
             charities = charities.substring(0, charities.length() - 2);
         }
         charititesTv.setText(charities);
