@@ -36,23 +36,29 @@ public class GroupActivity extends ToolbarDrawerActivity {
         sparksTv.setText("Sparks gained: " + group.getGroupsSparks());
         dateTv.setText("Created: "+group.getDate());
 
-        newmembernameEt = findViewById(R.id.et_newmembername);
-        addMemberBtn = findViewById(R.id.btn_addmember);
-        addMemberBtn.setOnClickListener(view -> {
-            group.addUser(Facade.getInstance().getUserByEmail(newmembernameEt.getText().toString()));
-            Toast.makeText(getApplicationContext(), "Added new member",
-                    Toast.LENGTH_SHORT).show();
-            newmembernameEt.setText("");
-        });
-
+        final MemberRvAdapter groupsAdapter = new MemberRvAdapter(groupName);
         RecyclerView rvMembers = findViewById(R.id.rv_members);
         rvMembers.setHasFixedSize(true);
         final LinearLayoutManager llmGroups = new LinearLayoutManager(this);
         llmGroups.setOrientation(LinearLayoutManager.VERTICAL);
         rvMembers.setLayoutManager(llmGroups);
-        final MemberRvAdapter groupsAdapter = new MemberRvAdapter(groupName);
+
         rvMembers.setAdapter(groupsAdapter);
         (rvMembers.getAdapter()).notifyDataSetChanged();
+
+        newmembernameEt = findViewById(R.id.et_newmembername);
+        addMemberBtn = findViewById(R.id.btn_addmember);
+        addMemberBtn.setOnClickListener(view -> {
+            Facade.getInstance().addUserToGroup(group,newmembernameEt.getText().toString() );
+            // group.addUser(Facade.getInstance().getUserByEmail(newmembernameEt.getText().toString()));
+            Toast.makeText(getApplicationContext(), "Added new member",
+                    Toast.LENGTH_SHORT).show();
+            newmembernameEt.setText("");
+            (rvMembers.getAdapter()).notifyDataSetChanged();
+
+        });
+
+
 
     }
 }
