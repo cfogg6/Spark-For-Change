@@ -63,13 +63,10 @@ public class CharityRecycleViewAdapter extends RecyclerView.Adapter<CharityRecyc
 
         charityViewHolder.charityTitle.setText(charity.getName());
 
-        charityViewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Intent it = getInentFunc.apply(v.getContext());
-                it.putExtra("charityIndex", i);
-                v.getContext().startActivity(it);
-            }
+        charityViewHolder.linearLayout.setOnClickListener(v -> {
+            final Intent it = getInentFunc.apply(v.getContext());
+            it.putExtra("charityIndex", i);
+            v.getContext().startActivity(it);
         });
     }
 

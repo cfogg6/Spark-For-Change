@@ -1,9 +1,7 @@
 package com.sparkforchange.controllers;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 import com.sparkforchange.R;
@@ -22,29 +20,21 @@ public class ServeActivity extends ToolbarDrawerActivity {
         loghoursBtn = findViewById(R.id.btn_loghours);
         volunteerTimelineBtn = findViewById(R.id.btn_volunteer_history);
 
-        sparkQRBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(ServeActivity.this, QRActivity.class);
-                startActivity(it);
-            }
+        sparkQRBtn.setOnClickListener(view -> {
+            Intent it = new Intent(ServeActivity.this, QRActivity.class);
+            startActivity(it);
         });
 
-        loghoursBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(ServeActivity.this, ChooseCharityActivity.class);
-                it.putExtra("nextActivity", "LogVolunteerActivity");
-                startActivity(it);
-            }
+        loghoursBtn.setOnClickListener(view -> {
+            Intent it = new Intent(ServeActivity.this, ChooseCharityActivity.class);
+            it.putExtra("nextActivity", "LogVolunteerActivity");
+            startActivity(it);
         });
 
-        volunteerTimelineBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it = new Intent(ServeActivity.this, TimelineActivity.class);
-                startActivity(it);
-            }
+        volunteerTimelineBtn.setOnClickListener(view -> {
+            Intent it = new Intent(ServeActivity.this, TimelineActivity.class);
+            it.putExtra("timelineType", 1);
+            startActivity(it);
         });
     }
 }
