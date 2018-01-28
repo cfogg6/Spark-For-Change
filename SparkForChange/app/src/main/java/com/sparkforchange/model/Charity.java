@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Charity extends Loginable {
     private String description;
-    private List<Block> donationHistory;
+    private List<SparkDonation> donationHistory;
     private List<Company> companiesSponsoring;
 
     Charity(String email, String password, String name) {
@@ -18,7 +18,7 @@ public class Charity extends Loginable {
         companiesSponsoring = new ArrayList<>();
     }
 
-    public List<Block> getDonationHistory() {
+    public List<SparkDonation> getDonationHistory() {
         return donationHistory;
     }
 
@@ -34,7 +34,7 @@ public class Charity extends Loginable {
         this.description = description;
     }
 
-    public void addDonation(Block donation) {
+    public void addDonation(SparkDonation donation) {
         donationHistory.add(donation);
     }
 
