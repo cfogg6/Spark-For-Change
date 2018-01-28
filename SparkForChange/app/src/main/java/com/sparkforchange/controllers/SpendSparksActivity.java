@@ -71,9 +71,6 @@ public class SpendSparksActivity extends ToolbarDrawerActivity {
                     startActivity(it);
                 }
             }
-
-
-
         });
     }
 }
