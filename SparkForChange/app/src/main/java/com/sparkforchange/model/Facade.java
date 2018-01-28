@@ -17,6 +17,7 @@ public class Facade {
     public static final double DOLLAR_TO_SPARK = 1 / SPARK_TO_DOLLAR;
 
     public static Facade getInstance() {
+        System.out.println(ourInstance);
         return ourInstance;
     }
     private HashMap<String, User> users;
@@ -34,15 +35,15 @@ public class Facade {
         // fake data
         this.users.put("amgiddings@gmail.com", new User("amgiddings@gmail.com", "password", "Allie Giddings"));
         this.users.put("cfogg6@gatech.edu", new User("cfogg6@gatech.edu", "password", "Corey Fogg"));
-        this.companies.put("UPS", new Company("ups@gmail.com", "password", "UPS", "https://sustainability.ups.com/the-ups-foundation/"));
-        this.companies.put("Union Pacific", new Company("unionpacific@gmail.com", "password", "Union Pacific", "https://www.up.com/aboutup/community/foundation/"));
-        this.companies.put("Sandia", new Company("sandia@gmail.com", "password", "Sandia", "http://www.sandia.gov/about/community/contribution_programs.html"));
-        this.companies.put("Capital One", new Company("capitalone@gmail.com", "password", "Capital One", "https://www.capitalone.com/about/corporate-citizenship/partnerships/"));
-        this.companies.put("Bloomberg", new Company("bloomberg@gmail.com", "password", "Bloomberg", "https://www.bloomberg.org/"));
-        this.companies.put("Shofur", new Company("shofur@gmail.com", "password", "Shofur", "https://shofur.com/blog/"));
-        this.companies.put("Google", new Company("google@gmail.com", "password", "Google", "https://www.google.org/"));
-        this.companies.put("GTRI", new Company("gtri@gmail.com", "password", "GTRI", "https://gtri.gatech.edu/"));
-        this.companies.put("Verizon", new Company("verizon@gmail.com", "password", "Verizon", "http://www.verizon.com/about/responsibility/giving-and-grants"));
+        this.companies.put("UPS", new Company("ups@gmail.com", "password", "UPS", "https://sustainability.ups.com/the-ups-foundation/", "UPS is great"));
+        this.companies.put("Union Pacific", new Company("unionpacific@gmail.com", "password", "Union Pacific", "https://www.up.com/aboutup/community/foundation/", "Union Pacific is great"));
+        this.companies.put("Sandia", new Company("sandia@gmail.com", "password", "Sandia", "http://www.sandia.gov/about/community/contribution_programs.html", "Has offices in New Mexico"));
+        this.companies.put("Capital One", new Company("capitalone@gmail.com", "password", "Capital One", "https://www.capitalone.com/about/corporate-citizenship/partnerships/", "What's in your wallet?"));
+        this.companies.put("Bloomberg", new Company("bloomberg@gmail.com", "password", "Bloomberg", "https://www.bloomberg.org/", "Bloomberg"));
+        this.companies.put("Shofur", new Company("shofur@gmail.com", "password", "Shofur", "https://shofur.com/blog/", "Shofur"));
+        this.companies.put("Google", new Company("google@gmail.com", "password", "Google", "https://www.google.org/", "Google drive, android studio, etc."));
+        this.companies.put("GTRI", new Company("gtri@gmail.com", "password", "GTRI", "https://gtri.gatech.edu/", "Georgia tech research institute"));
+        this.companies.put("Verizon", new Company("verizon@gmail.com", "password", "Verizon", "http://www.verizon.com/about/responsibility/giving-and-grants", "verizon"));
         this.charities.put("Child's Play", new Charity("child@gmail.com", "password", "Child's Play"));
         this.charities.put("Malaria", new Charity("malaria@gmail.com", "password", "Against Malaria"));
         this.charities.put("Breast Cancer", new Charity("breastcancer@gmail.com", "password", "Breast Cancer Research Foundation"));
@@ -61,6 +62,9 @@ public class Facade {
         this.currentUser.addSparks(288);
         makeSparkDonation(this.currentUser, companies.get("Bloomberg"), charities.get("Child's Play"), 50);
         makeSparkDonation(this.currentUser, companies.get("UPS"), charities.get("Malaria"), 100);
+
+//        this.currentUser.addHours(charities.get("Child's Play"), 4);
+//        this.currentUser.addHours(charities.get("Breast Cancer"), 3.5);
     }
 
     public int hoursToSparks(double hours) {

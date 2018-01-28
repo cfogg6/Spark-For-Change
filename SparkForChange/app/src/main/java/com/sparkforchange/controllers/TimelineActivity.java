@@ -3,6 +3,8 @@ package com.sparkforchange.controllers;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -18,20 +20,50 @@ public class TimelineActivity extends ToolbarDrawerActivity {
             getSupportActionBar().setTitle("Timeline");
         }
 
-        // set up spinner of choosing which timeline to view
-        String[] timelineSpinnerChoices = new String[] {"Spark Contributions", "Service Hours", "Donations"};
-        Spinner timelineChoices = findViewById(R.id.spinner_timeline);
-        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, timelineSpinnerChoices);
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        timelineChoices.setAdapter(spinnerAdapter);
-
         RecyclerView rvSparkContribution = findViewById(R.id.rv_spark_contribution);
         rvSparkContribution.setHasFixedSize(true);
-        final LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        rvSparkContribution.setLayoutManager(llm);
+        final LinearLayoutManager llmSparks = new LinearLayoutManager(this);
+        llmSparks.setOrientation(LinearLayoutManager.VERTICAL);
+        rvSparkContribution.setLayoutManager(llmSparks);
         final SparkContributionRvAdapter sparkAdapter = new SparkContributionRvAdapter();
         rvSparkContribution.setAdapter(sparkAdapter);
         (rvSparkContribution.getAdapter()).notifyDataSetChanged();
+
+        RecyclerView rvHours = findViewById(R.id.rv_service_hours);
+        rvHours.setHasFixedSize(true);
+        final LinearLayoutManager llmHours = new LinearLayoutManager(this);
+        llmHours.setOrientation(LinearLayoutManager.VERTICAL);
+        rvHours.setLayoutManager(llmHours);
+        final VolunteerHoursRvAdapter hoursAdapter = new VolunteerHoursRvAdapter();
+        rvHours.setAdapter(hoursAdapter);
+        (rvHours.getAdapter()).notifyDataSetChanged();
+
+        // set up spinner of choosing which timeline to view
+        String[] timelineSpinnerChoices = new String[] {"Spark Contributions", "Service Hours", "Donations"};
+        Spinner spinner = findViewById(R.id.spinner_timeline);
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, timelineSpinnerChoices);
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spinnerAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                switch (position) {
+                    case 0:
+                        rvSparkContribution.setVisibility(View.VISIBLE);
+                        rvHours.setVisibility(View.GONE);
+                        return;
+                    case 1:
+                        rvSparkContribution.setVisibility(View.GONE);
+                        rvHours.setVisibility(View.VISIBLE);
+                        return;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // your code here
+            }
+
+        });
     }
 }
