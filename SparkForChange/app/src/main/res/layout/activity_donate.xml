@@ -17,7 +17,8 @@
         android:id="@+id/et_donate_dollar_amount"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:inputType="numberDecimal"/>
+        android:hint="$1.00"
+        android:inputType="numberDecimal" />
 
     <CheckBox
         android:id="@+id/cb_use_payment"
