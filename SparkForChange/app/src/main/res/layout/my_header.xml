@@ -13,10 +13,7 @@
         android:gravity="start"
         android:text="Username"
         android:paddingBottom="4dp"
-        android:id="@+id/tV_username_header"
-        android:layout_alignTop="@+id/profile_image"
-        android:layout_toRightOf="@+id/profile_image"
-        android:layout_toEndOf="@+id/profile_image"/>
+        android:id="@+id/tV_username_header"/>
 
     <TextView
         android:layout_width="wrap_content"
