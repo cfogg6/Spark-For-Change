@@ -9,40 +9,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="Name"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/et_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textMultiLine"
-        android:text="Address:" />
+        android:hint="Address:"
+        android:inputType="textMultiLine" />
 
     <EditText
         android:id="@+id/et_creditcard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Credit card Number:" />
+        android:hint="Credit card Number:"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/et_cvv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="CVV:" />
+        android:hint="CVV:"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/et_expiration_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Expiration Date:" />
+        android:hint="Expiration Date:"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/btn_update"

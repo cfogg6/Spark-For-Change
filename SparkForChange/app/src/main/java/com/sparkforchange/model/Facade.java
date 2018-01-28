@@ -140,4 +140,13 @@ public class Facade {
     public List<Group> getGroups() {
         return new ArrayList<>(this.groups.values());
     }
+
+    public User getCurrentUser() {
+        return currentUser;
+    }
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
+    }
 }
+

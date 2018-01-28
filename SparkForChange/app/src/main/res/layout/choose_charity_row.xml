@@ -3,12 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/et_choose_charity_row_charity"
+    <TextView
+        android:id="@+id/tv_choose_charity_row_charity"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:ems="10"
-        android:inputType="textPersonName"
         android:text="Charity" />
+
+    <ImageView
+        android:id="@+id/im_choose_charity_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

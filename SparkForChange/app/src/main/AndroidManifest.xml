@@ -22,6 +22,9 @@
         <activity android:name=".controllers.DonateActivity"></activity>
         <activity android:name=".controllers.ServeActivity"></activity>
         <activity android:name=".controllers.GroupActivity"></activity>
+        <activity android:name=".controllers.RewardActivity"></activity>
+        <activity android:name=".controllers.ChooseCharityActivity"></activity>
+        <activity android:name=".controllers.PaymentMethodActivity"></activity>
         <activity android:name=".controllers.TimelineActivity"></activity>
     </application>
 
