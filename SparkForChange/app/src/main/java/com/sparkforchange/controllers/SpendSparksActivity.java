@@ -45,7 +45,7 @@ public class SpendSparksActivity extends ToolbarDrawerActivity {
         spendBtn.setOnClickListener(view -> {
             String number = sparkAmountText.getText().toString();
             if(number.equals("")) {
-                Toast.makeText(getApplicationContext(), "Enter in a valid number",
+                Toast.makeText(getApplicationContext(), "Enter in a valid number...plz",
                         Toast.LENGTH_SHORT).show();
             } else {
                 int sparks = Integer.parseInt(number);
@@ -54,7 +54,7 @@ public class SpendSparksActivity extends ToolbarDrawerActivity {
                             Toast.LENGTH_SHORT).show();
                 } else {
                     Facade.getInstance().makeSparkDonation(user, charity.getCompaniesSponsoring().get(0), charity, sparks);
-                    Toast.makeText(getApplicationContext(), "Transaction processed",
+                    Toast.makeText(getApplicationContext(), "Tran$action proce$$ed",
                             Toast.LENGTH_LONG).show();
                     Intent it = new Intent(SpendSparksActivity.this, HomeActivity.class);
                     startActivity(it);
