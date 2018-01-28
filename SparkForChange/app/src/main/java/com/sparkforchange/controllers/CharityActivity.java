@@ -5,14 +5,11 @@ import android.os.Bundle;
 
 import com.sparkforchange.R;
 
-public class ServeActivity extends ToolbarDrawerActivity {
+public class CharityActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_serve);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("Serve");
-        }
+        setContentView(R.layout.activity_charity);
     }
 }

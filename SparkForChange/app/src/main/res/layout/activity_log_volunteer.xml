@@ -2,11 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
     android:orientation="vertical"
     android:paddingVertical="10dp">
 
     <TextView
-        android:id="@+id/tv_charity"
+        android:id="@+id/et_charity"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:text="Charity"
@@ -18,7 +19,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_hours"
+            android:id="@+id/et_hours"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"

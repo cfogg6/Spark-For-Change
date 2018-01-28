@@ -18,5 +18,9 @@ public class SpendSparksActivity extends ToolbarDrawerActivity {
 
         availableSparks = findViewById(R.id.tv_sparks);
         availableSparks.setText("" + Facade.getInstance().getCurrentUser().getSparkBalance());
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Spend Sparks");
+        }
     }
 }

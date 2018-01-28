@@ -1,10 +1,10 @@
 package com.sparkforchange.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by Nancy on 01/27/2018.
@@ -127,7 +127,14 @@ public class Facade {
     }
 
     public List<Charity> getCharities() {
-        return new ArrayList<>(this.charities.values());
+        ArrayList<Charity> charityList = new ArrayList<Charity>(this.charities.values());
+        Collections.sort(charityList, new Comparator<Charity>() {
+            @Override
+            public int compare(Charity t, Charity t1) {
+                return t.getName().compareTo(t1.getName());
+            }
+        });
+        return charityList;
     }
 
     public List<Company> getCompanies() {

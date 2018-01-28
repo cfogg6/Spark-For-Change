@@ -17,6 +17,9 @@ public class HomeActivity extends ToolbarDrawerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Home");
+        }
         donateBtn = findViewById(R.id.btn_home_donate);
         serveBtn = findViewById(R.id.btn_home_serve);
         spendSparksBtn = findViewById(R.id.btn_home_sendsparks);
@@ -26,7 +29,7 @@ public class HomeActivity extends ToolbarDrawerActivity {
         donateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it = new Intent(HomeActivity.this, DonateActivity.class);
+                Intent it = new Intent(HomeActivity.this, ChooseCharityActivity.class);
                 startActivity(it);
             }
         });

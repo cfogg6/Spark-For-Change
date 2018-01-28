@@ -12,6 +12,9 @@ public class ProfileActivity extends ToolbarDrawerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Profile");
+        }
 
         Button volunteerHistoryBtn = findViewById(R.id.btn_timeline);
 
