@@ -37,11 +37,6 @@
             android:title="Spend Sparks"/>
 
         <item
-            android:id="@+id/rewards"
-            android:checked="false"
-            android:title="Rewards"/>
-
-        <item
             android:id="@+id/group"
             android:checked="false"
             android:title="Group"/>
