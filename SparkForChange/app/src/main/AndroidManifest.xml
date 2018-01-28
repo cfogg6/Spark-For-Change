@@ -16,16 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controllers.ToolbarDrawerActivity"></activity>
-        <activity android:name=".controllers.ProfileActivity"></activity>
-        <activity android:name=".controllers.SpendSparksActivity"></activity>
-        <activity android:name=".controllers.DonateActivity"></activity>
-        <activity android:name=".controllers.ServeActivity"></activity>
-        <activity android:name=".controllers.GroupActivity"></activity>
-        <activity android:name=".controllers.RewardActivity"></activity>
-        <activity android:name=".controllers.ChooseCharityActivity"></activity>
-        <activity android:name=".controllers.PaymentMethodActivity"></activity>
-        <activity android:name=".controllers.TimelineActivity"></activity>
+        <activity android:name=".controllers.ToolbarDrawerActivity" />
+        <activity android:name=".controllers.ProfileActivity" />
+        <activity android:name=".controllers.SpendSparksActivity" />
+        <activity android:name=".controllers.DonateActivity" />
+        <activity android:name=".controllers.ServeActivity" />
+        <activity android:name=".controllers.GroupActivity" />
+        <activity android:name=".controllers.RewardActivity" />
+        <activity android:name=".controllers.ChooseCharityActivity" />
+        <activity android:name=".controllers.PaymentMethodActivity" />
+        <activity android:name=".controllers.TimelineActivity" />
+        <activity android:name=".controllers.LogVolunteerActivity" />
+        <activity android:name=".controllers.QRActivity"></activity>
     </application>
 
 </manifest>
