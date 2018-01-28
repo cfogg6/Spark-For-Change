@@ -29,8 +29,8 @@ public class CompanyActivity extends ToolbarDrawerActivity {
         for (Charity charity : c.getCharityList()) {
             charities += charity.getName() + ", ";
         }
-        if (!charities.isEmpty()) {
-            charities.substring(0, charities.length() - 2);
+        if (!charities.isEmpty() || charities.length() > 0) {
+            charities = charities.substring(0, charities.length() - 2);
         }
         charititesTv.setText(charities);
         amountTv.setText("Donated " + c.getSparkBalance() + " Sparks.");
