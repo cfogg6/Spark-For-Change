@@ -83,7 +83,7 @@ public class User extends Loginable {
         return sparkLifetimeTotal;
     }
 
-    private void addSparks(int newSparks) {
+    void addSparks(int newSparks) {
         sparkBalance += newSparks;
         if (newSparks > 0) {
             sparkLifetimeTotal += newSparks;

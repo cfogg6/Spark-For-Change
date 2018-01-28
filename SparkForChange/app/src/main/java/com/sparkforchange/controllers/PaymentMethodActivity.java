@@ -1,8 +1,7 @@
 package com.sparkforchange.controllers;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -18,6 +17,7 @@ public class PaymentMethodActivity extends AppCompatActivity {
     EditText cvvEt;
     EditText expDateEt;
     EditText paymentNameEt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,31 +32,28 @@ public class PaymentMethodActivity extends AppCompatActivity {
         expDateEt = findViewById(R.id.et_expiration_date);
         paymentNameEt = findViewById(R.id.et_name);
         User curUser = Facade.getInstance().getCurrentUser();
-        if(curUser.getAddress() != null)
+        if (curUser.getAddress() != null)
             addressEt.setText(curUser.getAddress());
-        if(curUser.getCreditCard() != null)
+        if (curUser.getCreditCard() != null)
             creditCardEt.setText(curUser.getCreditCard());
-        if(curUser.getCvv() != null)
+        if (curUser.getCvv() != null)
             cvvEt.setText(curUser.getCvv());
-        if(curUser.getExpDate() != null)
+        if (curUser.getExpDate() != null)
             expDateEt.setText(curUser.getExpDate());
-        if(curUser.getPaymentName() != null)
+        if (curUser.getPaymentName() != null)
             paymentNameEt.setText(curUser.getPaymentName());
 
         updateBtn = findViewById(R.id.btn_update);
-        updateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                User curUser = Facade.getInstance().getCurrentUser();
-                curUser.setAddress(addressEt.getText().toString());
-                curUser.setCreditCard(creditCardEt.getText().toString());
-                curUser.setCvv(cvvEt.getText().toString());
-                curUser.setExpDate(expDateEt.getText().toString());
-                curUser.setPaymentName(paymentNameEt.getText().toString());
-                Toast.makeText(getApplicationContext(), "$$$ Payment Method Updated $$$",
-                        Toast.LENGTH_LONG).show();
-                finish();
-            }
+        updateBtn.setOnClickListener(view -> {
+            User currentUser = Facade.getInstance().getCurrentUser();
+            currentUser.setAddress(addressEt.getText().toString());
+            currentUser.setCreditCard(creditCardEt.getText().toString());
+            currentUser.setCvv(cvvEt.getText().toString());
+            currentUser.setExpDate(expDateEt.getText().toString());
+            currentUser.setPaymentName(paymentNameEt.getText().toString());
+            Toast.makeText(getApplicationContext(), "$$$ Payment Method Updated $$$",
+                    Toast.LENGTH_LONG).show();
+            finish();
         });
     }
 }

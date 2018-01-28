@@ -4,4 +4,7 @@
     <string name="drawer_open">Open Drawer</string>
     <string name="drawer_close">Close Drawer</string>
     <string name="title_activity_profile">ProfileActivity</string>
+    <string name="current_sparks">Current Sparks: %1$d</string>
+    <string name="lifetime_sparks">Lifetime Sparks: %1$d</string>
+    <string name="sparks_to_next_badge">Sparks to next badge: %1$d</string>
 </resources>

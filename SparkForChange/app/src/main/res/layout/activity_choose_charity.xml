@@ -13,8 +13,10 @@
         android:hint="Choose charity"
         android:inputType="textPersonName" />
 
-    <ListView
-        android:id="@+id/lv_choose_charity_charities"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_choose_charity_charities"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        />
 </LinearLayout>
