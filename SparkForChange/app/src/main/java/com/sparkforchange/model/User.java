@@ -17,6 +17,7 @@ public class User extends Loginable {
     private List<VolunteerHourBlock> hourHistory;
     private List<UserDonationBlock> donationHistory;
     private List<Group> groups;
+    private Company employer;
 
     // payment info
     private String paymentName;
@@ -50,6 +51,17 @@ public class User extends Loginable {
     public void addGroup(Group group) {
         groups.add(group);
     }
+
+    public void editEmployer(String employer, User user) {
+        if (this.employer != null) {
+            this.employer.removeEmployee(user);
+        }
+        Company company = Facade.getInstance().getCompanyByName(employer);
+        this.employer = company;
+        this.employer.addEmployee(user);
+    }
+
+    public Company getEmployer() { return employer; }
 
     public void removeGroup(Group group) {
         groups.remove(group);

@@ -13,6 +13,7 @@ public class Company extends Loginable {
     private List<Charity> charityList;
     private List<SparkDonation> donationsList;
     private String description;
+    private List<User> employees;
 
     Company(String email, String password, String name, String link, String description) {
         super(email, password, name);
@@ -30,6 +31,18 @@ public class Company extends Loginable {
 
     public void addCharity(Charity charity) {
         charityList.add(charity);
+    }
+
+    public void addEmployee(User user) { employees.add(user);}
+
+    public void removeEmployee(User user) { employees.remove(user);}
+
+    public int getEmployeeSparks() {
+        int sparks = 0;
+        for (User emp : employees) {
+            sparks += emp.getSparkBalance();
+        }
+        return sparks;
     }
 
     public String getDescription() { return description; }

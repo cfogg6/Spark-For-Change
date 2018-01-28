@@ -33,6 +33,6 @@ public class CompanyActivity extends ToolbarDrawerActivity {
             charities.substring(0, charities.length() - 2);
         }
         charititesTv.setText(charities);
-        amountTv.setText(String.valueOf(c.getSparkBalance()));
+        amountTv.setText("Donated " + c.getSparkBalance() + " Sparks.");
     }
 }
