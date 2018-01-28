@@ -14,18 +14,6 @@
         android:orientation="vertical"
         android:paddingHorizontal="0dp">
 
-        <SearchView
-            android:id="@+id/sv_home_search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="0dp"
-            android:layout_marginVertical="0dp"
-            android:queryHint="Search for charities and sponsors"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp" >
-
-        </SearchView>
-
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"

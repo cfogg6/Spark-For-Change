@@ -38,7 +38,12 @@ public class DonateActivity extends ToolbarDrawerActivity {
         });
         donateBtn.setOnClickListener(view -> {
             Intent intent = new Intent(DonateActivity.this, HomeActivity.class);
-            double amount = Double.parseDouble(amountEt.getText().toString().substring(1));
+            double amount;
+            if (amountEt.getText().toString().length() <= 1) {
+                amount = 0;
+            } else {
+                amount = Double.parseDouble(amountEt.getText().toString().substring(1));
+            }
             Facade.getInstance().getCurrentUser().addDonation(Facade.getInstance().getCharities().get(index), amount);
             Toast.makeText(getApplicationContext(), "Donation sent!", Toast.LENGTH_LONG).show();
             startActivity(intent);

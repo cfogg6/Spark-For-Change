@@ -10,7 +10,6 @@ import com.sparkforchange.R;
 public class HomeActivity extends ToolbarDrawerActivity {
 
     Button donateBtn, serveBtn, spendSparksBtn, profileBtn, groupsBtn;
-    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +22,6 @@ public class HomeActivity extends ToolbarDrawerActivity {
         serveBtn = findViewById(R.id.btn_home_serve);
         spendSparksBtn = findViewById(R.id.btn_home_sendsparks);
         profileBtn = findViewById(R.id.btn_home_profile);
-        searchView = findViewById(R.id.sv_home_search);
         groupsBtn = findViewById(R.id.btn_groups);
 
         donateBtn.setOnClickListener(view -> {
