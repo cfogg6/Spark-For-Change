@@ -12,13 +12,15 @@ public class Company extends Loginable {
     private int sparkBalance;
     private List<Charity> charityList;
     private List<SparkDonation> donationsList;
+    private String description;
 
-    Company(String email, String password, String name, String link) {
+    Company(String email, String password, String name, String link, String description) {
         super(email, password, name);
         this.link = link;
         this.sparkBalance = 0;
         charityList = new ArrayList<>();
         donationsList = new ArrayList<>();
+        this.description = description;
     }
 
     public void addDonation(SparkDonation donation) {
@@ -30,9 +32,13 @@ public class Company extends Loginable {
         charityList.add(charity);
     }
 
+    public String getDescription() { return description; }
+
     public List<Charity> getCharityList() {
         return charityList;
     }
+
+    public int getSparkBalance() { return sparkBalance; }
 
     public List<SparkDonation> getDonationsList() {
         return donationsList;
