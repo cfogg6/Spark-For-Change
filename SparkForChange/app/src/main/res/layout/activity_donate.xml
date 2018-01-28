@@ -35,9 +35,7 @@
         android:layout_marginVertical="5dp"
         android:background="@drawable/round_button"
         android:text="Donate now" />
-
-<<<<<<< HEAD
-=======
+    
     <Button
         android:id="@+id/btn_donate_viewhistory"
         android:layout_width="match_parent"
@@ -47,5 +45,4 @@
         android:background="@drawable/round_button"
         android:text="View Donation Timeline" />
 
->>>>>>> f0c1e7489a867a8822318bfeb2377c20c71e76a0
 </LinearLayout>
