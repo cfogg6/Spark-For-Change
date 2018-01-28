@@ -19,13 +19,13 @@ public class SpendSparksActivity extends ToolbarDrawerActivity {
     TextView charityView;
     Button spendBtn;
     EditText sparkAmountText;
+    Button historyBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spend_sparks);
 
-        // TODO: Update with whatever is passed thorugh
         int charityIndex = getIntent().getIntExtra("charityIndex", 0);
         Charity charity = Facade.getInstance().getCharities().get(charityIndex);
         User user = Facade.getInstance().getCurrentUser();
@@ -38,8 +38,14 @@ public class SpendSparksActivity extends ToolbarDrawerActivity {
             getSupportActionBar().setTitle("Spend Sparks");
         }
 
+        historyBtn = findViewById(R.id.btn_spend_sparks_viewhistory);
+
         spendBtn = findViewById(R.id.btn_spend_now);
         sparkAmountText = findViewById(R.id.et_spend_sparks);
+        historyBtn.setOnClickListener(view -> {
+            Intent it = new Intent(SpendSparksActivity.this, TimelineActivity.class);
+            startActivity(it);
+        });
 
 
         spendBtn.setOnClickListener(view -> {
