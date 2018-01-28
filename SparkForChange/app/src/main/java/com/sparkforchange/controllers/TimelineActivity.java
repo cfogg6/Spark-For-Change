@@ -38,12 +38,25 @@ public class TimelineActivity extends ToolbarDrawerActivity {
         rvHours.setAdapter(hoursAdapter);
         (rvHours.getAdapter()).notifyDataSetChanged();
 
+        RecyclerView rvDonations = findViewById(R.id.rv_donations);
+        rvDonations.setHasFixedSize(true);
+        final LinearLayoutManager llmDonations = new LinearLayoutManager(this);
+        llmDonations.setOrientation(LinearLayoutManager.VERTICAL);
+        rvDonations.setLayoutManager(llmDonations);
+        final DonationsRvAdapter donationsAdapter = new DonationsRvAdapter();
+        rvDonations.setAdapter(donationsAdapter);
+        (rvDonations.getAdapter()).notifyDataSetChanged();
+
         // set up spinner of choosing which timeline to view
         String[] timelineSpinnerChoices = new String[] {"Spark Contributions", "Service Hours", "Donations"};
         Spinner spinner = findViewById(R.id.spinner_timeline);
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, timelineSpinnerChoices);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerAdapter);
+
+        if (getIntent().hasExtra("timelineType")) {
+            spinner.setSelection(getIntent().getIntExtra("timelineType", 0));
+        }
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
@@ -51,11 +64,17 @@ public class TimelineActivity extends ToolbarDrawerActivity {
                     case 0:
                         rvSparkContribution.setVisibility(View.VISIBLE);
                         rvHours.setVisibility(View.GONE);
+                        rvDonations.setVisibility(View.GONE);
                         return;
                     case 1:
                         rvSparkContribution.setVisibility(View.GONE);
                         rvHours.setVisibility(View.VISIBLE);
+                        rvDonations.setVisibility(View.GONE);
                         return;
+                    case 2:
+                        rvSparkContribution.setVisibility(View.GONE);
+                        rvHours.setVisibility(View.GONE);
+                        rvDonations.setVisibility(View.VISIBLE);
                 }
             }
 

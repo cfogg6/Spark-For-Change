@@ -27,13 +27,11 @@
         <activity android:name=".controllers.PaymentMethodActivity"/>
         <activity android:name=".controllers.TimelineActivity"/>
         <activity android:name=".controllers.LogVolunteerActivity"/>
-        <activity android:name=".controllers.QRActivity"/>
         <activity android:name=".controllers.CharityActivity"/>
         <activity android:name=".controllers.CreateGroupActivity"/>
         <activity android:name=".controllers.ManageGroupsActivity"/>
         <activity android:name=".controllers.CompanyActivity"/>
-        <activity android:name=".controllers.SearchActivity">
-        </activity>
+        <activity android:name=".controllers.SearchActivity"></activity>
     </application>
 
 </manifest>

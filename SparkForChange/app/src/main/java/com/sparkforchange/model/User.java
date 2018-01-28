@@ -1,5 +1,6 @@
 package com.sparkforchange.model;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,7 +16,7 @@ public class User extends Loginable {
     private List<SparkDonation> sparkTransactions;
     private List<VolunteerHourBlock> hourHistory;
     private List<UserDonationBlock> donationHistory;
-    private Set<Group> groups;
+    private List<Group> groups;
 
     // payment info
     private String paymentName;
@@ -31,7 +32,7 @@ public class User extends Loginable {
         sparkTransactions = new LinkedList<>();
         hourHistory = new LinkedList<>();
         donationHistory = new LinkedList<>();
-        groups = new HashSet<>();
+        groups = new ArrayList<>();
     }
 
     public void addHours(Charity charity, double hours) {
@@ -71,7 +72,7 @@ public class User extends Loginable {
         return donationHistory;
     }
 
-    public Set<Group> getGroups() {
+    public List<Group> getGroups() {
         return groups;
     }
 

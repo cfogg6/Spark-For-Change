@@ -14,6 +14,7 @@ import java.util.List;
 
 public class Facade {
     private static final Facade ourInstance = new Facade();
+    private boolean fakeDataAdded = false;
     public static final double SPARK_TO_DOLLAR = .10;
     public static final double HOUR_TO_SPARK = 1;
     public static final double DOLLAR_TO_SPARK = 1 / SPARK_TO_DOLLAR;
@@ -47,13 +48,13 @@ public class Facade {
         this.companies.put("GTRI", new Company("gtri@gmail.com", "password", "GTRI", "https://gtri.gatech.edu/", "Georgia tech research institute"));
         this.companies.put("Verizon", new Company("verizon@gmail.com", "password", "Verizon", "http://www.verizon.com/about/responsibility/giving-and-grants", "verizon"));
         this.charities.put("Child's Play", new Charity("child@gmail.com", "password", "Child's Play"));
-        this.charities.put("Malaria", new Charity("malaria@gmail.com", "password", "Against Malaria"));
-        this.charities.put("Breast Cancer", new Charity("breastcancer@gmail.com", "password", "Breast Cancer Research Foundation"));
+        this.charities.put("Against Malaria", new Charity("malaria@gmail.com", "password", "Against Malaria"));
+        this.charities.put("Susan G. Komen", new Charity("breastcancer@gmail.com", "password", "Susan G. Komen"));
         this.groups.put("Alpha Sigma Phi", new Group("Alpha Sigma Phi", users.get("cfogg6@gatech.edu")));
         this.users.put("nancy@gmail.com", new User("nancy@gmail.com", "password", "Nancy Tao"));
         this.users.put("cole@gmail.com", new User("cole@gmail.com", "password", "Cole Bowers"));
-        this.groups.get("Alpha Sigma Phi").addUser(users.get("amgiddings@gmail.com"));
-        this.groups.get("Alpha Sigma Phi").addUser(users.get("cole@gmail.com"));
+        this.addUserToGroup(this.groups.get("Alpha Sigma Phi"), "amgiddings@gmail.com");
+        this.addUserToGroup(this.groups.get("Alpha Sigma Phi"), "cole@gmail.com");
 
         this.addPartnership(this.getCompanies().get(0),this.getCharities().get(0));
         this.addPartnership(this.getCompanies().get(1),this.getCharities().get(0));
@@ -63,10 +64,15 @@ public class Facade {
         this.currentUser = users.get("cole@gmail.com");
         this.currentUser.addSparks(288);
         makeSparkDonation(this.currentUser, companies.get("Bloomberg"), charities.get("Child's Play"), 50);
-        makeSparkDonation(this.currentUser, companies.get("UPS"), charities.get("Malaria"), 100);
+        makeSparkDonation(this.currentUser, companies.get("UPS"), charities.get("Against Malaria"), 100);
+    }
 
-//        this.currentUser.addHours(charities.get("Child's Play"), 4);
-//        this.currentUser.addHours(charities.get("Breast Cancer"), 3.5);
+    public void addFakeVolunteerData() {
+        if (!fakeDataAdded) {
+            this.currentUser.addHours(charities.get("Child's Play"), 4);
+            this.currentUser.addHours(charities.get("Susan G. Komen"), 3.5);
+        }
+        fakeDataAdded = true;
     }
 
     public int hoursToSparks(double hours) {
@@ -99,9 +105,11 @@ public class Facade {
         currentUser.addGroup(newGroup);
     }
 
-    public boolean addUser(Group group, String usersEmail) {
+    public boolean addUserToGroup(Group group, String usersEmail) {
         if (users.get(usersEmail) != null) {
+            User user = users.get(usersEmail);
             group.addUser(users.get(usersEmail));
+            user.addGroup(group);
             return true;
         }
         return false;
