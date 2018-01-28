@@ -1,26 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_sparks_row"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:weightSum="1">
 
     <TextView
-        android:id="@+id/tvPointsUsed"
+        android:id="@+id/tv_date_sparkDonations"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/tvCharity"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/tv_date"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="0.25"
         android:text="Date" />
+
+    <TextView
+        android:id="@+id/tv_charity_sparkDonations"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25"
+        android:text="Charity" />
+
+    <TextView
+        android:id="@+id/tv_company_sparkDonations"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25"
+        android:text="Company"
+        android:textAlignment="textEnd" />
+
+    <TextView
+        android:id="@+id/tv_sparks_used_sparkDonations"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight=".25"
+        android:text="Sparks"
+        android:textAlignment="textEnd" />
+
+    <ImageView
+        android:id="@+id/sparkDonation_currency_symbol"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:paddingTop="5dp"
+        app:srcCompat="@mipmap/spark_a" />
+
 </LinearLayout>
