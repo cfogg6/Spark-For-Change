@@ -44,7 +44,7 @@ public class Facade {
         this.companies.put("GTRI", new Company("gtri@gmail.com", "password", "GTRI", "https://gtri.gatech.edu/"));
         this.companies.put("Verizon", new Company("verizon@gmail.com", "password", "Verizon", "http://www.verizon.com/about/responsibility/giving-and-grants"));
         this.charities.put("Child's Play", new Charity("child@gmail.com", "password", "Child's Play"));
-        this.charities.put("Malaria", new Charity("malaria@gmail.com", "password", "Against Malaria Foundation"));
+        this.charities.put("Malaria", new Charity("malaria@gmail.com", "password", "Against Malaria"));
         this.charities.put("Breast Cancer", new Charity("breastcancer@gmail.com", "password", "Breast Cancer Research Foundation"));
         this.groups.put("Alpha Sigma Phi", new Group("Alpha Sigma Phi", users.get("cfogg6@gatech.edu")));
         this.users.put("nancy@gmail.com", new User("nancy@gmail.com", "password", "Nancy Tao"));
@@ -54,9 +54,9 @@ public class Facade {
 
         // set current user since we are not implementing login
         this.currentUser = users.get("cole@gmail.com");
-        this.currentUser.addSparks(278);
-        makeSparkDonation(this.currentUser, companies.get("bloomberg@gmail.com"), charities.get("child@gmail.com"), 50);
-        makeSparkDonation(this.currentUser, companies.get("ups@gmail.com"), charities.get("malaria@gmail.com"), 50);
+        this.currentUser.addSparks(288);
+        makeSparkDonation(this.currentUser, companies.get("Bloomberg"), charities.get("Child's Play"), 50);
+        makeSparkDonation(this.currentUser, companies.get("UPS"), charities.get("Malaria"), 100);
     }
 
     public int hoursToSparks(double hours) {
