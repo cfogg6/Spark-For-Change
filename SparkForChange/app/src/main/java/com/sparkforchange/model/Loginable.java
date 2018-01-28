@@ -4,7 +4,7 @@ package com.sparkforchange.model;
  * Created by Nancy on 01/27/2018.
  */
 
-public abstract class Loginable {
+public abstract class Loginable implements Comparable<Loginable> {
     private String email;
     private String password;
     private String name;
@@ -25,5 +25,10 @@ public abstract class Loginable {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public int compareTo(Loginable l) {
+        return name.compareTo(l.getName());
     }
 }

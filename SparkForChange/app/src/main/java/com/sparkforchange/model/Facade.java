@@ -136,17 +136,20 @@ public class Facade {
 
     public List<Charity> getCharities() {
         ArrayList<Charity> charityList = new ArrayList<Charity>(this.charities.values());
-        Collections.sort(charityList, new Comparator<Charity>() {
-            @Override
-            public int compare(Charity t, Charity t1) {
-                return t.getName().compareTo(t1.getName());
-            }
-        });
+        Collections.sort(charityList);
         return charityList;
     }
 
     public List<Company> getCompanies() {
         return new ArrayList<>(this.companies.values());
+    }
+
+    public List<Loginable> getLoginables() {
+        ArrayList<Loginable> loginablesArrayList = new ArrayList<>();
+        loginablesArrayList.addAll(companies.values());
+        loginablesArrayList.addAll(charities.values());
+        Collections.sort(loginablesArrayList);
+        return loginablesArrayList;
     }
 
     public List<User> getUsers() {
