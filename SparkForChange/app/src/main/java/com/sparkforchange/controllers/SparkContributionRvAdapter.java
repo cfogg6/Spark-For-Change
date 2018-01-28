@@ -43,7 +43,7 @@ public class SparkContributionRvAdapter extends RecyclerView.Adapter<SparkContri
 
     @Override
     public void onBindViewHolder(final SparkViewHolder sparkViewHolder, int i) {
-        final SparkDonation donation = sparkDonations.get(i);
+        final SparkDonation donation = sparkDonations.get(sparkDonations.size() - i - 1);
 
         sparkViewHolder.charityName.setText(donation.getCharity().getName());
         sparkViewHolder.companyName.setText(donation.getCompany().getName());
