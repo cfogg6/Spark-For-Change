@@ -60,7 +60,7 @@ public class SpendSparksActivity extends ToolbarDrawerActivity {
                             Toast.LENGTH_SHORT).show();
                 } else {
                     Facade.getInstance().makeSparkDonation(user, charity.getCompaniesSponsoring().get(0), charity, sparks);
-                    Toast.makeText(getApplicationContext(), "Tran$action proce$$ed",
+                    Toast.makeText(getApplicationContext(), charity.getCompaniesSponsoring().get(0).getName() + " donated " + Facade.getInstance().sparksToDollars(sparks) + " dollars on your behalf.",
                             Toast.LENGTH_LONG).show();
                     Intent it = new Intent(SpendSparksActivity.this, HomeActivity.class);
                     startActivity(it);

@@ -33,7 +33,9 @@ public class LogVolunteerActivity extends ToolbarDrawerActivity {
         charityTv.setText(charity.getName());
         submitBtn.setOnClickListener(view -> {
             Intent it = new Intent(LogVolunteerActivity.this, HomeActivity.class);
-            Facade.getInstance().getCurrentUser().addHours(Facade.getInstance().getCharityByName(charityTv.getText().toString()), Double.parseDouble(hoursEt.getText().toString()));
+            if (hoursEt.length() > 0) {
+                Facade.getInstance().getCurrentUser().addHours(Facade.getInstance().getCharityByName(charityTv.getText().toString()), Double.parseDouble(hoursEt.getText().toString()));
+            }
             startActivity(it);
         });
     }
