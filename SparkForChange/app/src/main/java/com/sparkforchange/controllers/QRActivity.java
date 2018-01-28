@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.sparkforchange.R;
 
-public class QRActivity extends AppCompatActivity {
+public class QRActivity extends ToolbarDrawerActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

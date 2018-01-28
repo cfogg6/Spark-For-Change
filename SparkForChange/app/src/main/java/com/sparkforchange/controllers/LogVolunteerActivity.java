@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.sparkforchange.R;
 import com.sparkforchange.model.Facade;
 
-public class LogVolunteerActivity extends AppCompatActivity {
+public class LogVolunteerActivity extends ToolbarDrawerActivity {
 
     Button submitBtn;
     EditText hoursEt;
