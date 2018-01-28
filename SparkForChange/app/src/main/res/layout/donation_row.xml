@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_donation_row"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/tv_donated_amount"
+        android:id="@+id/tv_date_donation"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="Donated Amount" />
+        android:text="Date" />
 
     <TextView
-        android:id="@+id/tv_charity"
+        android:id="@+id/tv_charity_donation"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="Charity" />
 
     <TextView
-        android:id="@+id/tv_date"
+        android:id="@+id/tv_donated_amount"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="Date" />
+        android:text="Donated Amount"
+        android:textAlignment="textEnd" />
 
 </LinearLayout>

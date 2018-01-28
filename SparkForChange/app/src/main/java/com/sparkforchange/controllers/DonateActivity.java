@@ -7,6 +7,7 @@ import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.sparkforchange.R;
 import com.sparkforchange.model.Facade;
@@ -25,7 +26,7 @@ public class DonateActivity extends ToolbarDrawerActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Donate");
         }
-        Integer index = 0;
+        int index = getIntent().getExtras().getInt("charityIndex");
         charityTv = findViewById(R.id.tv_charity);
         charityTv.setText(Facade.getInstance().getCharities().get(index).getName());
         updateBtn = findViewById(R.id.btn_update_payment);
@@ -38,12 +39,12 @@ public class DonateActivity extends ToolbarDrawerActivity {
         donateBtn.setOnClickListener(view -> {
             Intent intent = new Intent(DonateActivity.this, HomeActivity.class);
             double amount = Double.parseDouble(amountEt.getText().toString().substring(1));
-            Facade.getInstance().getCurrentUser().addDonation(Facade.getInstance().getCharities().get(index),amount);
+            Facade.getInstance().getCurrentUser().addDonation(Facade.getInstance().getCharities().get(index), amount);
+            Toast.makeText(getApplicationContext(), "Donation sent!", Toast.LENGTH_LONG).show();
             startActivity(intent);
         });
 
-        EditText editText = (EditText) findViewById(R.id.et_donate_dollar_amount);
-        editText.addTextChangedListener(new NumberTextWatcher(editText, "#,###"));
+        amountEt.addTextChangedListener(new NumberTextWatcher(amountEt, "#,###"));
     }
 }
 

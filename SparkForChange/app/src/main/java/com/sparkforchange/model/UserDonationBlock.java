@@ -1,5 +1,8 @@
 package com.sparkforchange.model;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 /**
  * Created by Nancy on 01/27/2018.
  */
@@ -7,6 +10,7 @@ package com.sparkforchange.model;
 public class UserDonationBlock {
     private double donationAmount;
     private int sparkNum;
+    private String date;
     private Charity charity;
     private User user;
 
@@ -15,6 +19,10 @@ public class UserDonationBlock {
         this.sparkNum = Facade.getInstance().dollarsToSparks(donationAmount);
         this.charity = charity;
         this.user = user;
+
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        this.date = df.format(c.getTime());
     }
 
     public double getDonationAmount() {
@@ -31,5 +39,9 @@ public class UserDonationBlock {
 
     public User getUser() {
         return user;
+    }
+
+    public String getDate() {
+        return date;
     }
 }
