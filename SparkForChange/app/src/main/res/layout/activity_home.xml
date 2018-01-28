@@ -20,6 +20,14 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <SearchView
+            android:id="@+id/sv_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="Search for charities and sponsors"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
+
         <Button
             android:id="@+id/btn_donate"
             android:layout_width="match_parent"
@@ -29,43 +37,29 @@
             tools:layout_editor_absoluteY="107dp" />
 
         <Button
-            android:id="@+id/btn_volunteer"
+            android:id="@+id/btn_serve"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="volunteer"
+            android:text="Serve"
             tools:layout_editor_absoluteX="204dp"
             tools:layout_editor_absoluteY="107dp" />
 
-        <SearchView
-            android:id="@+id/sv_search"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp" />
-
         <Button
-            android:id="@+id/btn_redeem"
+            android:id="@+id/btn_sendsparks"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Redeem"
+            android:text="Spend Sparks"
             tools:layout_editor_absoluteX="34dp"
             tools:layout_editor_absoluteY="199dp" />
-
-        <Button
-            android:id="@+id/btn_settings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Settings"
-            tools:layout_editor_absoluteX="34dp"
-            tools:layout_editor_absoluteY="445dp" />
 
         <Button
             android:id="@+id/btn_profile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Profile"
+            android:text="View Profile"
             tools:layout_editor_absoluteX="204dp"
             tools:layout_editor_absoluteY="199dp" />
+
     </LinearLayout>
 
 </LinearLayout>

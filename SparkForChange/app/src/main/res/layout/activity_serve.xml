@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </SearchView>
+
+    <Button
+        android:id="@+id/btn_qr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Spark QR" />
+
+    <Button
+        android:id="@+id/btn_loghours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log Volunteer Hours" />
+
+    <Button
+        android:id="@+id/btn_volunteer history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volunteer History" />
+
+</LinearLayout>
