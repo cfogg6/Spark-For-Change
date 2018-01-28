@@ -94,7 +94,6 @@ public class User extends Loginable {
     }
 
     public String getAddress() {
-
         return address;
     }
 
@@ -103,7 +102,6 @@ public class User extends Loginable {
     }
 
     public String getCreditCard() {
-
         return creditCard;
     }
 
@@ -112,7 +110,6 @@ public class User extends Loginable {
     }
 
     public String getExpDate() {
-
         return expDate;
     }
 
