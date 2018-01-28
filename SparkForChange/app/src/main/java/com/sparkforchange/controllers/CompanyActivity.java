@@ -34,5 +34,7 @@ public class CompanyActivity extends ToolbarDrawerActivity {
         }
         charititesTv.setText(charities);
         amountTv.setText("Donated " + c.getSparkBalance() + " Sparks.");
+        TextView empSparkstv = findViewById(R.id.tv_employeesparks);
+        empSparkstv.setText("Employees have gained " + Facade.getInstance().getCompanyByName(companyKey).getEmployeeSparks() + " Sparks");
     }
 }

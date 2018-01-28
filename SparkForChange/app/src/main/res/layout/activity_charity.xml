@@ -53,10 +53,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Sponsored Companies:"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textSize="24sp"/>
 
-    <ListView
-        android:id="@+id/lv_company"
+    <TextView
+        android:id="@+id/tv_charity_sponsored_companies"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="None yet!"
+        android:textSize="24sp"/>
+
 </LinearLayout>

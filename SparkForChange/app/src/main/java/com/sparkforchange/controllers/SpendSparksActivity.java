@@ -13,6 +13,8 @@ import com.sparkforchange.model.Charity;
 import com.sparkforchange.model.Facade;
 import com.sparkforchange.model.User;
 
+import java.text.DecimalFormat;
+
 public class SpendSparksActivity extends ToolbarDrawerActivity {
 
     TextView availableSparks;
@@ -60,7 +62,10 @@ public class SpendSparksActivity extends ToolbarDrawerActivity {
                             Toast.LENGTH_SHORT).show();
                 } else {
                     Facade.getInstance().makeSparkDonation(user, charity.getCompaniesSponsoring().get(0), charity, sparks);
-                    Toast.makeText(getApplicationContext(), charity.getCompaniesSponsoring().get(0).getName() + " donated " + Facade.getInstance().sparksToDollars(sparks) + " dollars on your behalf.",
+                    DecimalFormat df = new DecimalFormat("0.00");
+                    Toast.makeText(getApplicationContext(), charity.getCompaniesSponsoring().get(0).getName() + " donated $"
+                                    + df.format(Facade.getInstance().sparksToDollars(sparks))
+                                    + " on your behalf.",
                             Toast.LENGTH_LONG).show();
                     Intent it = new Intent(SpendSparksActivity.this, HomeActivity.class);
                     startActivity(it);

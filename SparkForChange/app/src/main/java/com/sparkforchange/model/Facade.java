@@ -71,6 +71,10 @@ public class Facade {
         if (!fakeDataAdded) {
             this.currentUser.addHours(charities.get("Child's Play"), 4);
             this.currentUser.addHours(charities.get("Susan G. Komen"), 3.5);
+            this.currentUser.addHours(getCharityByName("Child's Play"), 4);
+            this.currentUser.addHours(getCharityByName("Against Malaria"), 4);
+            this.currentUser.addDonation(getCharityByName("Against Malaria"), 100);
+            this.currentUser.addDonation(getCharityByName("Susan G. Komen"), 10);
         }
         fakeDataAdded = true;
     }
