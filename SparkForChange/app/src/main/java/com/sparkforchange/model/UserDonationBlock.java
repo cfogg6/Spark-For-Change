@@ -10,7 +10,7 @@ public class UserDonationBlock {
     private Charity charity;
     private User user;
 
-    public UserDonationBlock(double donationAmount, int sparkNum, Charity charity, User user) {
+    public UserDonationBlock(double donationAmount, Charity charity, User user) {
         this.donationAmount = donationAmount;
         this.sparkNum = Facade.getInstance().dollarsToSparks(donationAmount);
         this.charity = charity;

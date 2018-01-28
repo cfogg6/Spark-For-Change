@@ -24,6 +24,9 @@ public class ChooseCharityActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_charity);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Charities");
+        }
         rv = (RecyclerView) findViewById(R.id.rv_choose_charity_charities);
         rv.setHasFixedSize(true);
         final LinearLayoutManager llm = new LinearLayoutManager(this);

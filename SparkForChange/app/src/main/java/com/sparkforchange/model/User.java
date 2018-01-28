@@ -34,6 +34,18 @@ public class User extends Loginable {
         groups = new HashSet<>();
     }
 
+    public void addHours(Charity charity, double hours) {
+        VolunteerHourBlock newBlock = new VolunteerHourBlock(hours, charity, this);
+        hourHistory.add(newBlock);
+        addSparks(newBlock.getSparkNum());
+    }
+
+    public void addDonation(Charity charity, double dollars) {
+        UserDonationBlock newBlock = new UserDonationBlock(dollars, charity, this);
+        donationHistory.add(newBlock);
+        addSparks(newBlock.getSparkNum());
+    }
+
     public void addGroup(Group group) {
         groups.add(group);
     }
@@ -71,7 +83,7 @@ public class User extends Loginable {
         return sparkLifetimeTotal;
     }
 
-    public void addSparks(int newSparks) {
+    private void addSparks(int newSparks) {
         sparkBalance += newSparks;
         if (newSparks > 0) {
             sparkLifetimeTotal += newSparks;

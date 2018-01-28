@@ -11,5 +11,8 @@ public class SpendSparksActivity extends ToolbarDrawerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spend_sparks);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Spend Sparks");
+        }
     }
 }

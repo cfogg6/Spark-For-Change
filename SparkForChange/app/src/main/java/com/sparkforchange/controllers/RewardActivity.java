@@ -11,5 +11,8 @@ public class RewardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reward);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Rewards");
+        }
     }
 }

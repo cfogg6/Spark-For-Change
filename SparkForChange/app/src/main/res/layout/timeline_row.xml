@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/et_num_hours"
+    <TextView
+        android:id="@+id/tv_num_hours"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -12,8 +12,8 @@
         android:inputType="numberDecimal"
         android:text="Num hours" />
 
-    <EditText
-        android:id="@+id/et_charity"
+    <TextView
+        android:id="@+id/tv_charity"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -21,8 +21,8 @@
         android:inputType="textPersonName"
         android:text="Name" />
 
-    <EditText
-        android:id="@+id/et_date"
+    <TextView
+        android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"

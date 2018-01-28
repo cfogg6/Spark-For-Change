@@ -22,6 +22,9 @@ public class PaymentMethodActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_method);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Payment Method");
+        }
 
         addressEt = findViewById(R.id.et_address);
         creditCardEt = findViewById(R.id.et_creditcard);

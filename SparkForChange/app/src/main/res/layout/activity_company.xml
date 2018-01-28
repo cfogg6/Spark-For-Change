@@ -2,50 +2,51 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginHorizontal="20dp"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/et_blurb"
+        android:id="@+id/tv_blurb"
         android:layout_width="410dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-        android:text="Info about the company"
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:text="Info about the company" />
 
     <TextView
-        android:id="@+id/et_website"
+        android:id="@+id/tv_website"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-        android:text="Link to website"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="Link to website" />
 
     <TextView
-        android:id="@+id/et_charities"
+        android:id="@+id/tv_charities"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-        android:text="Charities we support"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="Charities we support" />
 
     <TextView
-        android:id="@+id/et_amount"
+        android:id="@+id/tv_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-        android:text="Amount raised this year:"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="Amount raised this year:" />
 
     <TextView
-        android:id="@+id/et_volunteer"
+        android:id="@+id/tv_volunteer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ems="10"
-        android:text="Employee volunteer hours"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="Employee volunteer hours" />
 </LinearLayout>

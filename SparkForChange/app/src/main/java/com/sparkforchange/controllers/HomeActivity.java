@@ -17,6 +17,9 @@ public class HomeActivity extends ToolbarDrawerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle("Home");
+        }
         donateBtn = findViewById(R.id.btn_home_donate);
         serveBtn = findViewById(R.id.btn_home_serve);
         spendSparksBtn = findViewById(R.id.btn_home_sendsparks);

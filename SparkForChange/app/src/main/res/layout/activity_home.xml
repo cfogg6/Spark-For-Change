@@ -27,28 +27,28 @@
         <Button
             android:id="@+id/btn_home_profile"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="15dp"
-            android:text="View Profile"
+            android:layout_height="66dp"
+            android:layout_marginVertical="5dp"
             android:background="@drawable/round_button"
+            android:text="View Profile"
             tools:layout_editor_absoluteX="204dp"
             tools:layout_editor_absoluteY="199dp" />
 
         <Button
             android:id="@+id/btn_home_donate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="15dp"
-            android:text="Donate"
+            android:layout_height="66dp"
+            android:layout_marginVertical="5dp"
             android:background="@drawable/round_button"
+            android:text="Donate"
             tools:layout_editor_absoluteX="34dp"
             tools:layout_editor_absoluteY="107dp" />
 
         <Button
             android:id="@+id/btn_home_serve"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="15dp"
+            android:layout_height="65dp"
+            android:layout_marginVertical="5dp"
             android:background="@drawable/round_button"
             android:text="Serve"
             tools:layout_editor_absoluteX="204dp"
@@ -57,8 +57,8 @@
         <Button
             android:id="@+id/btn_home_sendsparks"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="15dp"
+            android:layout_height="64dp"
+            android:layout_marginVertical="5dp"
             android:background="@drawable/round_button"
             android:text="Spend Sparks"
             tools:layout_editor_absoluteX="34dp"
@@ -67,8 +67,8 @@
         <Button
             android:id="@+id/btn_groups"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="15dp"
+            android:layout_height="67dp"
+            android:layout_marginVertical="5dp"
             android:background="@drawable/round_button"
             android:text="View Groups" />
 
