@@ -65,16 +65,16 @@ public class Facade {
         this.currentUser.addSparks(288);
         makeSparkDonation(this.currentUser, companies.get("Bloomberg"), charities.get("Child's Play"), 50);
         makeSparkDonation(this.currentUser, companies.get("UPS"), charities.get("Against Malaria"), 100);
-        this.currentUser.addHours(getCharityByName("Child's Play"), 4);
-        this.currentUser.addHours(getCharityByName("Against Malaria"), 4);
-        this.currentUser.addDonation(getCharityByName("Against Malaria"), 100);
-        this.currentUser.addDonation(getCharityByName("Susan G. Komen"), 10);
     }
 
     public void addFakeVolunteerData() {
         if (!fakeDataAdded) {
             this.currentUser.addHours(charities.get("Child's Play"), 4);
             this.currentUser.addHours(charities.get("Susan G. Komen"), 3.5);
+            this.currentUser.addHours(getCharityByName("Child's Play"), 4);
+            this.currentUser.addHours(getCharityByName("Against Malaria"), 4);
+            this.currentUser.addDonation(getCharityByName("Against Malaria"), 100);
+            this.currentUser.addDonation(getCharityByName("Susan G. Komen"), 10);
         }
         fakeDataAdded = true;
     }
