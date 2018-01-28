@@ -9,8 +9,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="0.6"
+        android:minHeight="10000dp"
         android:orientation="vertical">
 
         <TextView
@@ -45,6 +46,15 @@
             android:text="Created on:"
             android:textSize="30sp" />
 
+        <EditText
+            android:id="@+id/et_newmembername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Member's Email"
+            android:inputType="textPersonName" />
+
         <Button
             android:id="@+id/btn_addmember"
             android:layout_width="match_parent"
@@ -58,6 +68,6 @@
     <ListView
         android:id="@+id/lv_members"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="0.4" />
 </LinearLayout>
