@@ -53,8 +53,10 @@ public class Facade {
         this.groups.get("Alpha Sigma Phi").addUser(users.get("cole@gmail.com"));
 
         // set current user since we are not implementing login
-        this.currentUser = users.get("amgiddings@gmail.com");
-        this.currentUser.addSparks(178);
+        this.currentUser = users.get("cole@gmail.com");
+        this.currentUser.addSparks(278);
+        makeSparkDonation(this.currentUser, companies.get("bloomberg@gmail.com"), charities.get("child@gmail.com"), 50);
+        makeSparkDonation(this.currentUser, companies.get("ups@gmail.com"), charities.get("malaria@gmail.com"), 50);
     }
 
     public int hoursToSparks(double hours) {
