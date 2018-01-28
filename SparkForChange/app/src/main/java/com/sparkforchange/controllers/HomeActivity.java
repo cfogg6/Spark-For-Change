@@ -9,7 +9,7 @@ import com.sparkforchange.R;
 
 public class HomeActivity extends ToolbarDrawerActivity {
 
-    Button donateBtn, serveBtn, spendSparksBtn, profileBtn;
+    Button donateBtn, serveBtn, spendSparksBtn, profileBtn, groupsBtn;
     SearchView searchView;
 
     @Override
@@ -24,6 +24,7 @@ public class HomeActivity extends ToolbarDrawerActivity {
         spendSparksBtn = findViewById(R.id.btn_home_sendsparks);
         profileBtn = findViewById(R.id.btn_home_profile);
         searchView = findViewById(R.id.sv_home_search);
+        groupsBtn = findViewById(R.id.btn_groups);
 
         donateBtn.setOnClickListener(view -> {
             Intent it = new Intent(HomeActivity.this, ChooseCharityActivity.class);
@@ -43,6 +44,11 @@ public class HomeActivity extends ToolbarDrawerActivity {
 
         profileBtn.setOnClickListener(view -> {
             Intent it = new Intent(HomeActivity.this, ProfileActivity.class);
+            startActivity(it);
+        });
+
+        groupsBtn.setOnClickListener(view -> {
+            Intent it = new Intent(HomeActivity.this, ManageGroupsActivity.class);
             startActivity(it);
         });
     }

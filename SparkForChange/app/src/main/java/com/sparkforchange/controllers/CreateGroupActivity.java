@@ -26,11 +26,11 @@ public class CreateGroupActivity extends ToolbarDrawerActivity {
         addMemberBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Facade.getInstance().getGroupByName(nameEt.getText().toString()) != null) {
+                if (Facade.getInstance().getGroupByName(nameEt.getText().toString()) == null) {
                     Facade.getInstance().createGroup(nameEt.getText().toString());
                 }
                 Facade.getInstance().getGroupByName(nameEt.getText().toString()).addUser(Facade.getInstance().getUserByEmail(emailEt.getText().toString()));
-                emailEt.setTag("");
+                emailEt.setText("");
             }
         });
     }
