@@ -27,6 +27,7 @@ public class HomeActivity extends ToolbarDrawerActivity {
 
         donateBtn.setOnClickListener(view -> {
             Intent it = new Intent(HomeActivity.this, ChooseCharityActivity.class);
+            it.putExtra("nextActivity", "DonateActivity");
             startActivity(it);
         });
 

@@ -11,6 +11,6 @@ public class CharityActivity extends ToolbarDrawerActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_charity);
-        getIntent().getIntExtra("charityIndex", 0);
+        int charityIndex = getIntent().getIntExtra("charityIndex", 0);
     }
 }
