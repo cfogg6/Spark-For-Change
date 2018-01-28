@@ -26,7 +26,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="15dp"
-        android:text="Scan the QR code below with supported charities to automatically verify your service hours"/>
+        android:text="Scan the QR code below with supported charities to automatically verify your service hours"
+        android:textAlignment="center" />
 
     <ImageView
         android:id="@+id/imageView_qr"
