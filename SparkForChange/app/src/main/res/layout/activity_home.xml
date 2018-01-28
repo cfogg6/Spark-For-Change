@@ -22,7 +22,17 @@
             android:layout_marginVertical="0dp"
             android:queryHint="Search for charities and sponsors"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp" />
+            tools:layout_editor_absoluteY="8dp" >
+
+        </SearchView>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="134dp"
+            android:layout_marginVertical="5dp"
+            android:layout_weight="1"
+            app:srcCompat="@mipmap/ic_launcher" />
 
         <Button
             android:id="@+id/btn_home_profile"
@@ -71,13 +81,6 @@
             android:layout_marginVertical="5dp"
             android:background="@drawable/round_button"
             android:text="View Groups" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="134dp"
-            android:layout_marginVertical="5dp"
-            app:srcCompat="@mipmap/ic_launcher" />
 
     </LinearLayout>
 
