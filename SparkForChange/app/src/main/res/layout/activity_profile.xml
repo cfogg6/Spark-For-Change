@@ -11,6 +11,13 @@
         android:layout_weight="1"
         android:text="View timeline" />
 
+    <Button
+        android:id="@+id/btn_payment_method"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Update Payment Method" />
+
     <TextView
         android:id="@+id/et_current_points"
         android:layout_width="match_parent"
