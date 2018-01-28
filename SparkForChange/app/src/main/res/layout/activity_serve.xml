@@ -14,19 +14,25 @@
         android:id="@+id/btn_qr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
         android:layout_weight="1"
+        android:background="@drawable/round_button"
         android:text="Spark QR" />
 
     <Button
         android:id="@+id/btn_loghours"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/round_button"
         android:text="Log Volunteer Hours" />
 
     <Button
         android:id="@+id/btn_volunteer_history"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/round_button"
         android:text="View Volunteer Timeline" />
 
 </LinearLayout>
