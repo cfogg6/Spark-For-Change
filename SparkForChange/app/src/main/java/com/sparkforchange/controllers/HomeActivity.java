@@ -10,19 +10,18 @@ import com.sparkforchange.R;
 
 public class HomeActivity extends ToolbarDrawerActivity {
 
-    Button donateBtn, volunteerBtn, redeemBtn, profileBtn, settingsBtn;
+    Button donateBtn, volunteerBtn, redeemBtn, profileBtn;
     SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        donateBtn = findViewById(R.id.btn_donate);
-        volunteerBtn = findViewById(R.id.btn_volunteer);
-        redeemBtn = findViewById(R.id.btn_redeem);
-        profileBtn = findViewById(R.id.btn_profile);
-        settingsBtn = findViewById(R.id.btn_settings);
-        searchView = findViewById(R.id.sv_search);
+        donateBtn = findViewById(R.id.btn_home_donate);
+        volunteerBtn = findViewById(R.id.btn_home_serve);
+        redeemBtn = findViewById(R.id.btn_home_sendsparks);
+        profileBtn = findViewById(R.id.btn_home_profile);
+        searchView = findViewById(R.id.sv_home_search);
 
         donateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,14 +50,5 @@ public class HomeActivity extends ToolbarDrawerActivity {
 
             }
         });
-
-        settingsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-
     }
 }

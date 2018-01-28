@@ -18,6 +18,16 @@
         </activity>
         <activity android:name=".controllers.ToolbarDrawerActivity">
         </activity>
+        <activity android:name=".controllers.ProfileActivity">
+        </activity>
+        <activity android:name=".controllers.SpendSparksActivity">
+        </activity>
+        <activity android:name=".controllers.DonateActivity">
+        </activity>
+        <activity android:name=".controllers.ServeActivity">
+        </activity>
+        <activity android:name=".controllers.GroupActivity">
+        </activity>
     </application>
 
 </manifest>

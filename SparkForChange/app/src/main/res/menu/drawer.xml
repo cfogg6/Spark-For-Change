@@ -18,9 +18,12 @@
               android:checked="false"
               android:title="Serve"/>
 
-        <item android:id="@+id/redeem"
+        <item android:id="@+id/spendSparks"
               android:checked="false"
               android:title="Redeem"/>
 
+        <item android:id="@+id/group"
+              android:checked="false"
+              android:title="Group"/>
     </group>
 </menu>

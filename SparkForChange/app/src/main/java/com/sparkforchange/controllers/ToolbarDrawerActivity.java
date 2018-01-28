@@ -114,38 +114,37 @@ public class ToolbarDrawerActivity extends AppCompatActivity {
 
                     //Check to see which item was being clicked and perform appropriate action
                     Intent it;
-//                    switch (menuItem.getItemId()) {
-//                        case R.id.home:
-//                            it = new Intent(ToolbarDrawerActivity.this, HomeActivity.class);
-//                            startActivity(it);
-//                            return true;
-//
-//                        case R.id.profile:
-//                            it = new Intent(ToolbarDrawerActivity.this, ShowProfileDrawerActivity.class);
-//                            startActivity(it);
-//                            return true;
-//
-//                        case R.id.browse_new:
-//                            it = new Intent(ToolbarDrawerActivity.this, NewMovieDrawerActivity.class);
-//                            startActivity(it);
-//                            return true;
-//
-//                        case R.id.recommendations:
-//                            it = new Intent(ToolbarDrawerActivity.this, RecommendationsActivity.class);
-//                            startActivity(it);
-//                            return true;
-//
-//                        case R.id.signout:
-//                            ParseUser.logOut();
-//                            it = new Intent(ToolbarDrawerActivity.this, LoginActivity.class);
-//                            startActivity(it);
-//                            return true;
-//
-//                        case R.id.search:
-//                            it = new Intent(ToolbarDrawerActivity.this, SearchManagerActivity.class);
-//                            startActivity(it);
-//                            return true;
-//                    }
+                    switch (menuItem.getItemId()) {
+                        case R.id.home:
+                            it = new Intent(ToolbarDrawerActivity.this, HomeActivity.class);
+                            startActivity(it);
+                            return true;
+
+                        case R.id.profile:
+                            it = new Intent(ToolbarDrawerActivity.this, ProfileActivity.class);
+                            startActivity(it);
+                            return true;
+
+                        case R.id.donate:
+                            it = new Intent(ToolbarDrawerActivity.this, DonateActivity.class);
+                            startActivity(it);
+                            return true;
+
+                        case R.id.serve:
+                            it = new Intent(ToolbarDrawerActivity.this, ServeActivity.class);
+                            startActivity(it);
+                            return true;
+
+                        case R.id.spendSparks:
+                            it = new Intent(ToolbarDrawerActivity.this, SpendSparksActivity.class);
+                            startActivity(it);
+                            return true;
+
+                        case R.id.group:
+                            it = new Intent(ToolbarDrawerActivity.this, GroupActivity.class);
+                            startActivity(it);
+                            return true;
+                    }
                     return true;
                 }
             });
