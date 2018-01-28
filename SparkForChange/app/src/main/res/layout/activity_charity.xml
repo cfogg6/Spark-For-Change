@@ -4,40 +4,46 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <EditText
+    <TextView
         android:id="@+id/et_blurb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textMultiLine"
-        android:text="Info about the charity" />
+        android:text="Info about the charity"
+        android:textSize="24sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/et_website"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Link to website:" />
+        android:text="Link to website:"
+        android:textSize="24sp" />
 
-    <EditText
+    <TextView
         android:id="@+id/et_raised"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Funds raised this year:" />
+        android:text="Funds raised this year:"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/btn_donate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/round_button"
         android:text="Donate" />
 
     <Button
         android:id="@+id/btn_volunteer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/round_button"
         android:text="Volunteer" />
 
     <EditText
@@ -45,8 +51,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Sponsored Companies:" />
+        android:hint="Sponsored Companies:"
+        android:inputType="textPersonName" />
 
     <ListView
         android:id="@+id/lv_company"

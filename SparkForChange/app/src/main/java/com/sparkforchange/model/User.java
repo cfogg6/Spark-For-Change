@@ -12,14 +12,24 @@ import java.util.Set;
 public class User extends Loginable {
     private int sparkBalance;
     private int sparkLifetimeTotal;
-    private List<Block> transactions;
+    private List<SparkDonation> sparkTransactions;
+    private List<VolunteerHourBlock> hourHistory;
+    private List<UserDonationBlock> donationHistory;
     private Set<Group> groups;
+
+    private String paymentName;
+    private String address;
+    private String creditCard;
+    private String cvv;
+    private String expDate;
 
     User(String email, String password, String name) {
         super(email, password, name);
         sparkBalance = 0;
         sparkLifetimeTotal = 0;
-        transactions = new LinkedList<>();
+        sparkTransactions = new LinkedList<>();
+        hourHistory = new LinkedList<>();
+        donationHistory = new LinkedList<>();
         groups = new HashSet<>();
     }
 
@@ -29,6 +39,23 @@ public class User extends Loginable {
 
     public void removeGroup(Group group) {
         groups.remove(group);
+    }
+
+    public List<SparkDonation> getSparkTransactions() {
+        return sparkTransactions;
+    }
+
+    public void addSparkTransaction(SparkDonation transaction) {
+        sparkTransactions.add(transaction);
+        sparkBalance -= transaction.getSparkNum();
+    }
+
+    public List<VolunteerHourBlock> getHourHistory() {
+        return hourHistory;
+    }
+
+    public List<UserDonationBlock> getDonationHistory() {
+        return donationHistory;
     }
 
     public Set<Group> getGroups() {
@@ -50,11 +77,43 @@ public class User extends Loginable {
         }
     }
 
-    public List<Block> getTransactions() {
-        return transactions;
+    public String getCvv() {
+        return cvv;
     }
 
-    public void addTransaction(Block b) {
-        this.transactions.add(b);
+    public void setCvv(String cvv) {
+        this.cvv = cvv;
+    }
+
+    public String getPaymentName() {
+        return paymentName;
+    }
+
+    public void setPaymentName(String paymentName) {
+        this.paymentName = paymentName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCreditCard() {
+        return creditCard;
+    }
+
+    public void setCreditCard(String creditCard) {
+        this.creditCard = creditCard;
+    }
+
+    public String getExpDate() {
+        return expDate;
+    }
+
+    public void setExpDate(String expDate) {
+        this.expDate = expDate;
     }
 }

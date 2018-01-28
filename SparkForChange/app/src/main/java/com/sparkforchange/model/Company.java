@@ -9,18 +9,21 @@ import java.util.List;
 
 public class Company extends Loginable {
     private String link;
+    private int sparkBalance;
     private List<Charity> charityList;
-    private List<Block> donationsList;
+    private List<SparkDonation> donationsList;
 
     Company(String email, String password, String name, String link) {
         super(email, password, name);
         this.link = link;
+        this.sparkBalance = 0;
         charityList = new ArrayList<>();
         donationsList = new ArrayList<>();
     }
 
-    public void addDonation(Block donation) {
+    public void addDonation(SparkDonation donation) {
         donationsList.add(donation);
+        sparkBalance += donation.getSparkNum();
     }
 
     public void addCharity(Charity charity) {
@@ -31,7 +34,7 @@ public class Company extends Loginable {
         return charityList;
     }
 
-    public List<Block> getDonationsList() {
+    public List<SparkDonation> getDonationsList() {
         return donationsList;
     }
 
