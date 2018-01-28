@@ -28,6 +28,8 @@
         </activity>
         <activity android:name=".controllers.GroupActivity">
         </activity>
+        <activity android:name=".controllers.RewardActivity">
+        </activity>
     </application>
 
 </manifest>
