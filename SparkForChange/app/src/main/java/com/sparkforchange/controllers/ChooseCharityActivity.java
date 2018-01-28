@@ -1,18 +1,20 @@
 package com.sparkforchange.controllers;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.ListView;
 
 import com.sparkforchange.R;
 import com.sparkforchange.model.Charity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
-public class ChooseCharityActivity extends AppCompatActivity {
+public class ChooseCharityActivity extends ToolbarDrawerActivity {
 
     private final List<Charity> charities = new ArrayList<>();
     /**
@@ -32,7 +34,12 @@ public class ChooseCharityActivity extends AppCompatActivity {
         final LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         rv.setLayoutManager(llm);
-        final CharityListviewAdapter adapter = new CharityListviewAdapter();
+        final CharityRecycleViewAdapter adapter = new CharityRecycleViewAdapter(new Function<Context, Intent>() {
+            @Override
+            public Intent apply(Context context) {
+                return new Intent(context, CharityActivity.class);
+            }
+        });
         rv.setAdapter(adapter);
         (rv.getAdapter()).notifyDataSetChanged();
     }

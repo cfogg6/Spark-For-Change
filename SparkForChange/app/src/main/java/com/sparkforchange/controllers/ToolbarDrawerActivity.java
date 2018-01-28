@@ -122,7 +122,7 @@ public class ToolbarDrawerActivity extends AppCompatActivity {
                             return true;
 
                         case R.id.donate:
-                            it = new Intent(ToolbarDrawerActivity.this, DonateActivity.class);
+                            it = new Intent(ToolbarDrawerActivity.this, ChooseCharityActivity.class);
                             startActivity(it);
                             return true;
 
