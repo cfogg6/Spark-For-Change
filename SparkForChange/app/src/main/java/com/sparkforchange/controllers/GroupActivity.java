@@ -3,6 +3,8 @@ package com.sparkforchange.controllers;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +28,7 @@ public class GroupActivity extends ToolbarDrawerActivity {
         }
         groupNameTv = findViewById(R.id.tv_groupname);
         sparksTv = findViewById(R.id.tv_sparks);
+
         dateTv = findViewById(R.id.tv_date);
         String groupName = getIntent().getStringExtra("groupKey");
         Group group = Facade.getInstance().getGroupByName(groupName);
@@ -33,13 +36,29 @@ public class GroupActivity extends ToolbarDrawerActivity {
         sparksTv.setText("Sparks gained: " + group.getGroupsSparks());
         dateTv.setText("Created: "+group.getDate());
 
+        final MemberRvAdapter groupsAdapter = new MemberRvAdapter(groupName);
+        RecyclerView rvMembers = findViewById(R.id.rv_members);
+        rvMembers.setHasFixedSize(true);
+        final LinearLayoutManager llmGroups = new LinearLayoutManager(this);
+        llmGroups.setOrientation(LinearLayoutManager.VERTICAL);
+        rvMembers.setLayoutManager(llmGroups);
+
+        rvMembers.setAdapter(groupsAdapter);
+        (rvMembers.getAdapter()).notifyDataSetChanged();
+
         newmembernameEt = findViewById(R.id.et_newmembername);
         addMemberBtn = findViewById(R.id.btn_addmember);
         addMemberBtn.setOnClickListener(view -> {
-            group.addUser(Facade.getInstance().getUserByEmail(newmembernameEt.getText().toString()));
+            Facade.getInstance().addUserToGroup(group,newmembernameEt.getText().toString() );
+            // group.addUser(Facade.getInstance().getUserByEmail(newmembernameEt.getText().toString()));
             Toast.makeText(getApplicationContext(), "Added new member",
                     Toast.LENGTH_SHORT).show();
+            newmembernameEt.setText("");
+            (rvMembers.getAdapter()).notifyDataSetChanged();
+
         });
+
+
 
     }
 }
