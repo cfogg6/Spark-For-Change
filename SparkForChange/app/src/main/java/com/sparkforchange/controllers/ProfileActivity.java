@@ -39,6 +39,6 @@ public class ProfileActivity extends ToolbarDrawerActivity {
         // set spark balance info
         tvCurrentSparks.setText(getString(R.string.current_sparks, currentUser.getSparkBalance()));
         tvLifetimeSparks.setText(getString(R.string.lifetime_sparks, currentUser.getSparkLifetimeTotal()));
-        tvSparksToBadge.setText(getString(R.string.sparks_to_next_badge, 10));
+        tvSparksToBadge.setText(getString(R.string.sparks_to_next_badge, 500 - currentUser.getSparkLifetimeTotal()));
     }
 }
