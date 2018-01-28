@@ -22,6 +22,7 @@ public class Company extends Loginable {
         charityList = new ArrayList<>();
         donationsList = new ArrayList<>();
         this.description = description;
+        employees = new ArrayList<>();
     }
 
     public void addDonation(SparkDonation donation) {

@@ -5,12 +5,17 @@
     android:layout_marginHorizontal="20dp"
     android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/lv_rewards"
+    <TextView
+        android:id="@+id/tv_reward1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:text="Redeem $30 Google Play Credit with code SPARKS"
+        android:textSize="30sp" />
 
-    </ListView>
-
+    <TextView
+        android:id="@+id/tv_reward2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="50% off your next UPS package with PROMO card Sparks"
+        android:textSize="30sp" />
 </LinearLayout>

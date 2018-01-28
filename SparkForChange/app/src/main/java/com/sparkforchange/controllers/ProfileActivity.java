@@ -30,6 +30,8 @@ public class ProfileActivity extends ToolbarDrawerActivity {
         TextView tvCurrentSparks = findViewById(R.id.tv_current_sparks);
         TextView tvLifetimeSparks = findViewById(R.id.tv_lifetime_sparks);
         TextView tvSparksToBadge = findViewById(R.id.tv_sparks_next_badge);
+        EditText etemployer = findViewById(R.id.et_employer);
+        Button employerBtn = findViewById(R.id.btn_updateemployer);
 
         volunteerHistoryBtn.setOnClickListener(view -> {
             Facade.getInstance().addFakeVolunteerData();
@@ -39,6 +41,12 @@ public class ProfileActivity extends ToolbarDrawerActivity {
         updateBtn.setOnClickListener(view -> {
             Intent intent = new Intent(ProfileActivity.this, PaymentMethodActivity.class);
             startActivityForResult(intent, 1);
+        });
+
+        employerBtn.setOnClickListener(view -> {
+            Facade.getInstance().getCurrentUser().editEmployer(etemployer.getText().toString(), Facade.getInstance().getCurrentUser());
+            Toast.makeText(getApplicationContext(),"Updated your employer",
+                    Toast.LENGTH_LONG).show();
         });
 
         // set spark balance info
