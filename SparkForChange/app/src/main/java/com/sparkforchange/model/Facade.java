@@ -52,6 +52,9 @@ public class Facade {
         this.groups.get("Alpha Sigma Phi").addUser(users.get("amgiddings@gmail.com"));
         this.groups.get("Alpha Sigma Phi").addUser(users.get("cole@gmail.com"));
 
+
+        this.addPartnership(this.getCompanies().get(0),this.getCharities().get(0));
+
         // set current user since we are not implementing login
         this.currentUser = users.get("cole@gmail.com");
         this.currentUser.addSparks(288);
