@@ -7,10 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.sparkforchange.R;
-import com.sparkforchange.model.Charity;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ChooseCharityActivity extends ToolbarDrawerActivity {
 

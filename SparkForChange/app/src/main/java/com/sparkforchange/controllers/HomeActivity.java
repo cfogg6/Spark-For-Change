@@ -38,7 +38,8 @@ public class HomeActivity extends ToolbarDrawerActivity {
         });
 
         spendSparksBtn.setOnClickListener(view -> {
-            Intent it = new Intent(HomeActivity.this, SpendSparksActivity.class);
+            Intent it = new Intent(HomeActivity.this, ChooseCharityActivity.class);
+            it.putExtra("nextActivity", "SpendSparksActivity");
             startActivity(it);
         });
 

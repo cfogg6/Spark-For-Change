@@ -133,7 +133,8 @@ public class ToolbarDrawerActivity extends AppCompatActivity {
                             return true;
 
                         case R.id.spendSparks:
-                            it = new Intent(ToolbarDrawerActivity.this, SpendSparksActivity.class);
+                            it = new Intent(ToolbarDrawerActivity.this, ChooseCharityActivity.class);
+                            it.putExtra("nextActivity", "SpendSparksActivity");
                             startActivity(it);
                             return true;
 
