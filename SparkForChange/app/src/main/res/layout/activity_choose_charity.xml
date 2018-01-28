@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Choose which charity to donate" />
+        android:text="Choose charity" />
 
     <ListView
         android:id="@+id/lv_choose_charity_charities"
