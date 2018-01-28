@@ -67,7 +67,7 @@ public class CharityRecycleViewAdapter extends RecyclerView.Adapter<CharityRecyc
             @Override
             public void onClick(View v) {
                 final Intent it = getInentFunc.apply(v.getContext());
-                it.putExtra("charity_index", i);
+                it.putExtra("charityIndex", i);
                 v.getContext().startActivity(it);
             }
         });

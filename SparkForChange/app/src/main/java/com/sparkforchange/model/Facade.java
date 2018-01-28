@@ -54,6 +54,8 @@ public class Facade {
 
 
         this.addPartnership(this.getCompanies().get(0),this.getCharities().get(0));
+        this.addPartnership(this.getCompanies().get(1),this.getCharities().get(0));
+        this.addPartnership(this.getCompanies().get(2),this.getCharities().get(0));
 
         // set current user since we are not implementing login
         this.currentUser = users.get("amgiddings@gmail.com");

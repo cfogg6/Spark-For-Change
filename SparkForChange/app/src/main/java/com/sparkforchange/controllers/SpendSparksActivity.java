@@ -26,7 +26,7 @@ public class SpendSparksActivity extends ToolbarDrawerActivity {
         setContentView(R.layout.activity_spend_sparks);
 
         // TODO: Update with whatever is passed thorugh
-        int charityIndex = 0;
+        int charityIndex = getIntent().getIntExtra("charityIndex", 0);
         Charity charity = Facade.getInstance().getCharities().get(charityIndex);
         User user = Facade.getInstance().getCurrentUser();
         availableSparks = findViewById(R.id.tv_sparks);
