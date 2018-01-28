@@ -19,6 +19,8 @@ public class ProfileActivity extends ToolbarDrawerActivity {
             getSupportActionBar().setTitle("Profile");
         }
 
+        User currentUser = Facade.getInstance().getCurrentUser();
+
         Button volunteerHistoryBtn = findViewById(R.id.btn_timeline);
         Button updateBtn = findViewById(R.id.btn_payment_method);
         TextView tvCurrentSparks = findViewById(R.id.tv_current_sparks);
@@ -26,6 +28,7 @@ public class ProfileActivity extends ToolbarDrawerActivity {
         TextView tvSparksToBadge = findViewById(R.id.tv_sparks_next_badge);
 
         volunteerHistoryBtn.setOnClickListener(view -> {
+            Facade.getInstance().addFakeVolunteerData();
             startActivity(new Intent(ProfileActivity.this, TimelineActivity.class));
         });
 
@@ -33,8 +36,6 @@ public class ProfileActivity extends ToolbarDrawerActivity {
             Intent intent = new Intent(ProfileActivity.this, PaymentMethodActivity.class);
             startActivityForResult(intent, 1);
         });
-
-        User currentUser = Facade.getInstance().getCurrentUser();
 
         // set spark balance info
         tvCurrentSparks.setText(getString(R.string.current_sparks, currentUser.getSparkBalance()));

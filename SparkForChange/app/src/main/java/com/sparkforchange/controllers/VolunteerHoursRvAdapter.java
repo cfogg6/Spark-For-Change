@@ -43,7 +43,7 @@ public class VolunteerHoursRvAdapter extends RecyclerView.Adapter<VolunteerHours
         final VolunteerHourBlock block = volunteerHourBlocks.get(volunteerHourBlocks.size() - i - 1);
 
         hourViewHolder.charityName.setText(block.getCharity().getName());
-        hourViewHolder.hours.setText(String.valueOf(block.getSparkNum()));
+        hourViewHolder.hours.setText(String.valueOf(block.getHours()));
         hourViewHolder.date.setText(block.getDate());
     }
 
