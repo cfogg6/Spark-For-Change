@@ -17,6 +17,7 @@ public class User extends Loginable {
     private List<UserDonationBlock> donationHistory;
     private Set<Group> groups;
 
+    // payment info
     private String paymentName;
     private String address;
     private String creditCard;
