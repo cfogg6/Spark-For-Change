@@ -1,5 +1,5 @@
 # Spark for Change
-## About Us ##
+## Background ##
 Created for the Make a Difference Hackathon and winner of the Bloomberg Philanthropy Mission prize. Checkout our [devpost submission](https://devpost.com/software/spark-for-change). 
 
 ## Inspiration
