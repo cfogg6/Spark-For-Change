@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 /**
- * Adapter for the RecyclerView regarding horizontal cards or movie cards.
+ * Adapter for the RecyclerView regarding horizontal cards.
  */
 public class SearchRecyclerViewAdapter extends RecyclerView.Adapter<SearchRecyclerViewAdapter.GroupViewHolder> {
 
@@ -78,7 +78,7 @@ public class SearchRecyclerViewAdapter extends RecyclerView.Adapter<SearchRecycl
 
     /**
      * ViewHolder Class following the ViewHolder Android Pattern. Establishes views held inside
-     * the movie cards that this adapter sets.
+     * the cards that this adapter sets.
      */
     public static class GroupViewHolder extends RecyclerView.ViewHolder {
         /**
