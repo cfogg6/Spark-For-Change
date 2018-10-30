@@ -64,8 +64,7 @@ public class GroupRecyclerViewAdapter extends RecyclerView.Adapter<GroupRecycler
     }
 
     /**
-     * ViewHolder Class following the ViewHolder Android Pattern. Establishes views held inside
-     * the movie cards that this adapter sets.
+     * ViewHolder Class following the ViewHolder Android Pattern.
      */
     public static class GroupViewHolder extends RecyclerView.ViewHolder {
         private TextView groupName;
