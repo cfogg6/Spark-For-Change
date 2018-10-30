@@ -3,7 +3,7 @@
 Created for the Make a Difference Hackathon and winner of the Bloomberg Philanthropy Mission prize. Check out our [devpost submission](https://devpost.com/software/spark-for-change)!
 
 ## Inspiration
-During the opening ceremonies, I was astonished to hear about the large amount of philanthropy that the various corporate sponsors. We began thinking about how to gamify personal philanthropy and integrate those companies contributions as motivation. 
+During the opening ceremonies, We were astonished to hear about the large amount of philanthropy that the various corporate sponsors. We began thinking about how to gamify personal philanthropy and integrate those companies contributions as motivation. 
 
 ## What it does
 Our app, Spark for Change, is targeted at philanthropic-minded individuals who want their donations and service hours to go farther. When users donate money to charities through the app or volunteer at charities (verified through a special SparkQR), they receive an in-game currency, Sparks. Once you accumulate Sparks, you can choose a charity to support. Companies can choose to sponsor many charities. The sponsoring company for that charity at the time will donate a proportionate amount of money on your behalf to the charity, up to a company-set max. 
