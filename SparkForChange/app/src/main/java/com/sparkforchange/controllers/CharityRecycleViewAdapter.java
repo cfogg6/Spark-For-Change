@@ -43,9 +43,9 @@ public class CharityRecycleViewAdapter extends RecyclerView.Adapter<CharityRecyc
     }
 
     /**
-     * Method to update the movie list for the adapter with a new set of charities.
+     * Method to update the charity list for the adapter with a new list of charities.
      *
-     * @param list New list to update the movie list to
+     * @param list New list to update the charity list to
      */
     public void updateCharities(List<Charity> list) {
         charities = list;
@@ -74,7 +74,7 @@ public class CharityRecycleViewAdapter extends RecyclerView.Adapter<CharityRecyc
 
     /**
      * ViewHolder Class following the ViewHolder Android Pattern. Establishes views held inside
-     * the movie cards that this adapter sets.
+     * the charity cards that this adapter sets.
      */
     public static class CharityViewHolder extends RecyclerView.ViewHolder {
         /**
@@ -82,7 +82,7 @@ public class CharityRecycleViewAdapter extends RecyclerView.Adapter<CharityRecyc
          */
         private TextView charityTitle;
         /**
-         * Movie photo
+         * Charity's photo
          */
         private ImageView charityPhoto;
         /**
